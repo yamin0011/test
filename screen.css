@@ -14,10 +14,37 @@ html, body, h1, h2, h3, form, fieldset {
 	vertical-align: baseline;
 }
 
-article, aside, header, main, nav {
+
+
+article, aside, header, main,  {
 	display: block;
 }
+nav{
+	display:inline-flex ;
+}
+.background-image {
+    background-image: url('aaqsa.jpg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Makes the background fill the viewport height */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
 
+.header-content {
+    height: 100%; /* Full height of the parent */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    color: white; /* Text color for visibility */
+    text-align: center; /* Center text */
+    padding: 20px; /* Optional padding */
+}
+.relative {
+	position: ;
+}
 
 /***** BODY です *****/
 
@@ -80,7 +107,7 @@ figure {
 	text-align: center;
 }
 h1 a {
-	color: #009921;
+	color: #030099;
 	text-decoration: green;
 }
 h1, h2 {
@@ -97,18 +124,18 @@ p {
 	/* text-shadow: #eee 0px 0px 1px; */
 }
 ul li {
-	list-style-type: square;
+	list-style-type: circle;
 }
 
 
 /***** HEADER です *****/
 
 header {
-	text-align: center;
+	text-align: right;
 	font-size: 0.9em;
 }
 header #logo {
-	background: url("/aqsa.png") bottom left no-repeat;
+	background: url("/aqsa.png") top left no-repeat;
 	display: inline-block;
 	height: 29px;
 	width: 29px;
@@ -151,7 +178,7 @@ nav {
 }
 
 nav a {
-	margin: 0 0.2em;
+	margin: 20px 0.2em;
 }
 
 
@@ -215,7 +242,7 @@ time, .tags {
 	margin-top: 80px;
 	font-size: 0.9em;
 	font-weight :bold;
-	color: #004599;
+	color: #a0d60c;
 	line-height: 1.6em;
 	text-align: center;
 }
