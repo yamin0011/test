@@ -10,7 +10,9 @@ h1 {
 audio {
   width: 100%;
 }
-
+article{
+  text-align: center;
+}
 @font-face {
   font-family: "Standard";
   src: url("/assets/fonts/standard-book-webfont.woff2");
