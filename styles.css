@@ -42,9 +42,9 @@ h4 {
 
 pre {
     white-space: pre-wrap;
-    background-color: #111111;
+    background-color: #f3eeee;
     padding: 1em;
-    border-radius: 1em;
+    border-radius: 2em;
 }
 
 html {
@@ -200,7 +200,7 @@ a:focus, .focused_link {
   gap: 10px;
 }
 code{
-  color: green;
+  color: rgb(238, 10, 10);
 }
 
 .list_entry {
