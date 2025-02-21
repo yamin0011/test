@@ -27,10 +27,13 @@ table {
     margin: 20px 0;
 }
 h1 {
+    font-family: Noto Sans Arabic
+    ;
     color: green;
     text-align: center;
 }
 h3 {
+    font-family: Noto sans arabic;
     color: rgb(13, 31, 194);
     text-align: center;
 }
