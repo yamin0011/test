@@ -21,6 +21,13 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
 }
+h1 {
+    color: green;
+    text-align: center;
+}
+h3 {
+    color: rgb(196, 31, 31);
+}
 
 table, th, td {
     border: 1px solid #ddd;
