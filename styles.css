@@ -42,7 +42,7 @@ h4 {
 
 pre {
     white-space: pre-wrap;
-    background-color: #f3eeee;
+    background-color: #0bc559;
     padding: 1em;
     border-radius: 2em;
 }
@@ -124,7 +124,7 @@ a {
 }
 
 a:hover, a:active, .hover_link {
-  background-color: rgb(220, 230, 222);
+  background-color: rgb(17, 226, 58);
 }
 
 a:focus, .focused_link {
