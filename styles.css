@@ -124,7 +124,7 @@ a {
 }
 
 a:hover, a:active, .hover_link {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(4, 245, 24);
 }
 
 a:focus, .focused_link {
@@ -136,7 +136,8 @@ a:focus, .focused_link {
 
 #profile_image {
   float: right;
-  border-radius: 5em;
+  border-radius: 10em;
+  border-color: green; 
 }
 
 #tablist li {
