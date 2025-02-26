@@ -136,8 +136,9 @@ a:focus, .focused_link {
 
 #profile_image {
   float: right;
-  border-radius: 10em;
+  border-radius: 50em;
   border-color: green; 
+  border-width: 20%;
 }
 
 #tablist li {
