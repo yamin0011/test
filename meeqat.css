@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f488;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,13 +9,50 @@ body {
     height: 100vh;
 }
 
+
 .container {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
     
 }
+{
+
+}
+a {
+    color: rgba(8, 8, 8, 0.74);
+    text-align: justify;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-style: oblique;
+    text-decoration: overline;
+      
+   
+  }
+  
+  a:hover, a:active, .hover_link {
+    background-color: rgb(4, 245, 24);
+  }
+  
+  a:focus, .focused_link {
+    background-color: rgb(7, 7, 7);
+    color: rgb(59, 57, 57);
+    font-weight: 600;
+    outline: none;
+    text-align: center;
+  }
+nav ul li {
+    margin-bottom: 0.5em;
+  }
+nav ul, nav p {
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+  }
 span  {
     color: #e28585;
     text-align: center;
@@ -35,11 +72,13 @@ h1 {
 h2{
     color: green;
     text-align: center;
+    text-decoration: underline;
 }
 h3 {
-    font-family: Noto sans arabic;
-    color: rgb(13, 31, 194);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(10, 10, 10, 0.884);
     text-align: center;
+    
 }
 
 table, th, td {
@@ -62,4 +101,42 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #f1f1f1;
+}
+.hide-on-mobile {
+    display: none;
+  }
+  .hide-on-desktop {
+    display: block;
+  }
+  li .hide-on-desktop {
+    display: inline;
+  }
+  .hide-on-desktop {
+    display: none;
+  }
+  #skip-to-main-content-link:focus {
+    top: 0;
+  }
+  .site-name, #navigation_meta em {
+    display: none;
+  }
+  .site-name, .site-name-mobile {
+    font-weight: 600;
+  }
+  
+  .site-name-mobile {
+    margin-bottom: 0.2em;
+  }
+  
+  .mascot {
+    max-height: 5em;
+  }
+  
+  #main {
+    padding-right: 1em;
+  }
+span {
+    font-family: fantasy;
+    color: rgba(255, 8, 0, 0.575);
+    text-shadow: rgb(17, 17, 17);
 }
