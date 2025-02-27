@@ -28,6 +28,9 @@ html {
     text-shadow: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+  h5{
+    text-align: center;
+  }
   #bird-container {
     position: absolute;
     top: -10px;
