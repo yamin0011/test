@@ -20,3 +20,6 @@ body {
         color: green;
         text-align: center;
     }
+    body{
+        max-width: 30em;
+    }
