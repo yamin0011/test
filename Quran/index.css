@@ -17,20 +17,24 @@ html {
   }
   a {
     color: rgb(12, 12, 12);
-    text-align: center;
+    text-align: left;
     
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
-    font-style: normal;
+   
     font-weight: bolder;
-    text-decoration: overline;
+   
     margin: auto;
-    display: block;
+    display: contents;
     block-size: 2em;
-    border-block-style: double;
-    text-align: center;
+    
+    text-align: left;
       
    
+  }
+  section body {
+    max-width: 50em;
+    text-align: left;
   }
   
   a:hover, a:active, .hover_link {
@@ -53,7 +57,6 @@ html {
     #background-color: rgb(255, 255, 255);
     box-shadow: 10em;
     text-shadow: #0707df81;
-  }
-  section{
     text-align: center;
   }
+  
