@@ -14,8 +14,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-h1{
-    font-family: sans-serif;
-    text-align: center;
-    color: red;
-}
+ h1 {
+        font-family: Noto Sans Arabic
+        ;
+        color: green;
+        text-align: center;
+    }
