@@ -52,6 +52,14 @@ html {
   border-top: 0.5em solid var(--primary-color);
   max-width: 100%;
 }
+section{
+  text-align: justify;
+  border: 2px solid #0f0f0f81; /* Solid black border */
+    padding: 20px;
+    margin: 20px 0; /* Margin around the section */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #0a0a0a25; /* White background */
+}
 
 iframe {
   width: 100%;
@@ -369,5 +377,3 @@ tr, thead {
     display: inline;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */

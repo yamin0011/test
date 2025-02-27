@@ -54,3 +54,6 @@ html {
     box-shadow: 10em;
     text-shadow: #0707df81;
   }
+  section{
+    text-align: center;
+  }
