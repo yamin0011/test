@@ -125,7 +125,9 @@ nav ul li {
 p{
   color: #111111;
 }
-
+li{
+  font-size: larger;
+}
 a {
   color: var(--primary-color);
   text-decoration: none;
