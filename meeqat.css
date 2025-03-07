@@ -133,9 +133,19 @@ a {
   text-decoration: none;
   border-bottom: 0.1em dotted var(--primary-color);
 }
-
+h4{
+  font-size: x-large;
+  text-align: center;
+  color: green;
+}
 a:hover, a:active, .hover_link {
   background-color: rgb(4, 245, 24);
+}
+
+div
+{
+  text-align: center;
+  
 }
 
 a:focus, .focused_link {
@@ -444,7 +454,7 @@ tr:hover {
     padding-right: 1em;
   }
 span {
-    font-family: fantasy;
-    color: rgba(255, 8, 0, 0.575);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(233, 21, 14, 0.918);
     text-shadow: rgb(17, 17, 17);
 }
