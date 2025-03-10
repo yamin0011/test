@@ -308,7 +308,7 @@
     padding: 1em;
     border-radius: 0.5em;
   }
-  
+   
   .color-swatch {
     display: grid;
     grid-template-columns: 1fr 1fr;
