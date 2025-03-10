@@ -1,0 +1,294 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link as="style" href="https://jamesg.blog/assets/styles/styles.css" rel="preload">
+    <title>James' Coffee Blog</title>
+    <!-- styles.css contains the CSS that styles most of this website. -->
+    <link href="https://jamesg.blog/assets/styles/styles.css" rel="stylesheet">
+    <!-- I use Webmention to receive comments on my website. Learn more at https://indieweb.org/Webmention -->
+    <link href="https://webmention.io/jamesg.blog/webmention" rel="webmention">
+    <!-- rel=me lets me specify where to find me on other sites.
+          These links can be used with IndieAuth for authentication.
+          If jamesg.blog links to a profile page with rel=me, and that profile page links back to jamesg.blog,
+          it can be inferred that the profile page and jamesg.blog are controlled by the same person.
+          This allows rel=me to be used for authentication, when a two-way link is made.
+          Learn more about rel=me at https://indieweb.org/rel-me -->
+    <link href="mailto:jamesg@jamesg.blog" rel="me">
+    <link href="https://news.ycombinator.com/user?id=zerojames" rel="me">
+    <link href="https://orcid.org/0009-0006-3736-1653" rel="me">
+    <!-- This is used to optimise my website for mobile use.
+          See https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag for more information about what the tag means. -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- These links let RSS readers discover my website's RSS feed
+          so that people can subscribe to this website! -->
+    <link href="https://jamesg.blog/feeds/posts.xml" rel="alternate" title="RSS" type="application/rss+xml">
+    <!-- This link contains information that mobile devices use to render progressive web apps (PWAs).
+            PWAs make websites feel more native to some mobile devices when a web page is added to a device home screen
+            or saved as a device app. -->
+    <link href="https://jamesg.blog/assets/manifest.json" rel="manifest">
+    <meta content="Welcome to James' Coffee Blog!" name="description">
+    <link href="https://jamesg.blog/assets/opensearch.xml" rel="search" title="James' Coffee Blog Search" type="application/opensearchdescription+xml">
+    <!-- screenshots.jamesg.blog generates preview screenshots of my blog posts to show on social platforms.
+            See https://github.com/capjamesg/screenshots to set it up for yourself. -->
+    <meta content="https://screenshots.jamesg.blog/?url=https://jamesg.blog" property="og:image">
+    <script async="" defer="" src="https://jamesg.blog/assets/js/seasonal.js"></script>
+    <!-- This sets the icon that appears in your browser tab. -->
+    <link href="https://jamesg.blog/assets/mascot.svg" rel="icon">
+    </head>
+    <body><style>pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .highlight .hll { background-color: #ffffcc }
+    .highlight { background: #f8f8f8; }
+    .highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .highlight .err { border: 1px solid #FF0000 } /* Error */
+    .highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .highlight .o { color: #666666 } /* Operator */
+    .highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .highlight .ge { font-style: italic } /* Generic.Emph */
+    .highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+    .highlight .gr { color: #E40000 } /* Generic.Error */
+    .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .highlight .gi { color: #008400 } /* Generic.Inserted */
+    .highlight .go { color: #717171 } /* Generic.Output */
+    .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .highlight .gs { font-weight: bold } /* Generic.Strong */
+    .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .highlight .kt { color: #B00040 } /* Keyword.Type */
+    .highlight .m { color: #666666 } /* Literal.Number */
+    .highlight .s { color: #BA2121 } /* Literal.String */
+    .highlight .na { color: #687822 } /* Name.Attribute */
+    .highlight .nb { color: #008000 } /* Name.Builtin */
+    .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .highlight .no { color: #880000 } /* Name.Constant */
+    .highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .highlight .nf { color: #0000FF } /* Name.Function */
+    .highlight .nl { color: #767600 } /* Name.Label */
+    .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .highlight .nv { color: #19177C } /* Name.Variable */
+    .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .highlight .sx { color: #008000 } /* Literal.String.Other */
+    .highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    <!--
+      Welcome, fellow web wanderer, to James' Coffee Blog: web developer edition!
+    
+      Here, I have documented what various parts of my website mean. I haven't documented everything, but I hope what is below is useful to you.
+    
+      In this HTML, you will be introduced to everything from microformats to Webmention to penguins.
+    
+      This site is generated using a static site generator. Static site generators use logic to generate HTML.
+    
+      If you see a page that lists blog posts, for example, that list was generated with some static site generator magic.
+    
+      If you love making personal websites, you may like the IndieWeb community! Join us at https://indieweb.org/discuss.
+    
+      If you have questions about my website and how it works, feel free to email readers [at] jamesg [dot] blog!
+    
+      Please feel free to use the source code below as inspiration in your web adventures.
+    
+      If you are unsure whether to start a personal website: I recommend you give it a try! Your site can be a single web page! You can grow it over time if
+      that interests you. If it doesn't, that's okay, too: your website is _your_ place on the web.
+    
+      I hope you have a wonderful day, and that you continue wandering the web to explore more websites!
+    
+      --------------
+    
+      Nix: How would your jet pack make the world a better place?
+    
+      Young Frank Walker : Can't it just be fun?
+    
+      - Tomorrowland
+    
+      --------------
+      -->
+    <main>
+    <!-- Skip link so that screen reader users can skip narration of the navigation bar. -->
+    <nav>
+    <div id="navigation_meta">
+    <a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
+    <!-- My site has a cute mascot! Learn more about him at https://jamesg.blog/mascot/.
+            A friend suggested I come up with a name other than James, which I gave to the mascot in the aforelinked post. I thought about MJ, short for Mascot James.
+            Herein, my mascot will be MJ and James. Or perhaps any of the myriad other nicknames I am likely to come up with over the years.
+    
+            I hired someone to design this mascot. The aforelinked post provides more information and a recommendation for the designer!
+            -->
+    <p>
+    <a aria-label="Go to the homepage" class="noborder" href="/">
+    <img alt="James' Coffee Blog mascot" class="mascot" height="76" src="https://jamesg.blog/assets/mascot.svg" width="80">
+    </a>
+    </p>
+    <p class="site-name">James' Coffee Blog <span aria-hidden="true" class="seasonal_emoji">🎃</span></p>
+    <em>with words, wonder.</em>
+    </div>
+    <ul>
+    <p class="hide-on-desktop site-name-mobile">James' Coffee Blog <span aria-hidden="true" class="seasonal_emoji">🎃</span></p>
+    <li><a class="p-author" href="https://jamesg.blog/" rel="home author">Home</a></li>
+    <li><a href="https://jamesg.blog/indieweb/">IndieWeb</a></li>
+    <li><a href="https://jamesg.blog/2024/02/19/personal-website-ideas/">Website Ideas</a></li>
+    <li><a href="https://jamesg.blog/technical-writing/">Technical Writing</a></li>
+    <li><a href="https://jamesg.blog/moments-of-joy/">Moments of Joy</a></li>
+    <li><a href="https://jamesg.blog/poetry/">Poetry</a></li>
+    <li><a aria-label="Show or hide navigation links" class="hide-on-desktop" href="#" onclick="document.querySelector('#extended_nav').classList.toggle('hide-on-mobile'); return false;">[+]</a></li>
+    <div class="hide-on-mobile" id="extended_nav">
+    <li><a href="https://jamesg.blog/2024/01/03/software-technical-writing/">Book</a></li>
+    <li><a href="https://jamesg.blog/explore/">Explore</a></li>
+    <li><a href="https://jamesg.blog/wander/">Wander</a></li>
+    <li><a href="https://jamesg.blog/search-pages/">Search</a></li>
+    <li><a href="/email/">Email</a></li>
+    <li><a href="https://jamesg.blog/feed/">RSS</a></li>
+    </div>
+    </ul>
+    </nav>
+    <div id="main">
+    <!-- My bio is structured as a h-card, a way of representing profile information on the web.
+    h-card isn't widely used, and I don't recommend adding it if you are new to the web.
+    If you are interested, you can learn more about h-card at https://microformats.org/wiki/h-card.
+    -->
+    <div class="h-feed hfeed intro h-card p-author">
+    <img alt="James sitting in a coffee shop, happily staring at a cup of coffee." class="u-photo main-photo u-logo" height="100" id="profile_image" src="https://jamesg.blog/assets/coffeeshop.jpg" width="100">
+    <p class="p-note">Hello! Привіт! I'm <a class="p-name u-url p-given-name" href="https://jamesg.blog/">James</a> (<a class="u-sound p-ipa" href="https://jamesg.blog/assets/pronunciation.m4a" rel="pronunciation">/d͡ʒeɪmz/</a>) (also <abbr class="p-nickname" title="[cap] = cappuccino, James G.">capjamesg</abbr>). My pronouns are <a href="https://pronouns.within.lgbt/he/him/his/his/himself"><span class="u-pronoun">he</span>/<span class="u-pronoun">him</span>/<span class="u-pronoun">his</span></a>. I live in <span class="p-country-name">Scotland</span>. This is my blog.</p>
+    <p>I hope this website can bring a little bit of joy into your day.</p>
+    <!-- I hope you are having a wonderful day! -->
+    <h2>Writings</h2>
+    <form action="https://jamesg.blog/search-pages/" method="get">
+    <search class="search-box">
+    <input autocomplete="off" id="q" name="q" placeholder="Search..." type="text">
+    <span></span>
+    <button type="submit">Search</button>
+    </search>
+    </form>
+    <ul class="blog">
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/17/google-doc-export-images-folder/">How to export images from Google Docs as a folder</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-17 00:00:00">October 17, 2024</time> under the <a class="p-category" href="https://jamesg.blog/indieweb/">IndieWeb</a> category.</p>
+    <p>When you copy images directly from a Google Document into Ghost, and potentially other rich text editors, URL references to the images in the Document are copied instead of the underlying image. This means that if the document is deleted, the images will be broken.</p>
+    </li>
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/13/search-engine-shortcuts-firefox/">Search engine shortcuts in Firefox</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-13 00:00:00">October 13, 2024</time> under the <a class="p-category" href="https://jamesg.blog/indieweb/">IndieWeb</a> category.</p>
+    <p>Firefox has a feature that lets you map a character or sequence of characters typed in the Firefox address bar to a custom search engine. For example, you can map <code>w</code> to Wikipedia, so the query <code>w coffee</code> would take you to the Wikipedia search page for coffee (which auto-redirects to the Wikipedia page for coffee).</p>
+    </li>
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/13/morning-coffee/">Morning coffee</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-13 00:00:00">October 13, 2024</time> under the <a class="p-category" href="https://jamesg.blog/coffee/">Coffee</a> category.</p>
+    <p>Your eyes open to see rays of the autumn sun peeking through your dark curtains. A soft alarm rings in the background. It’s time to start your day.</p>
+    </li>
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/12/stargazing/">Stargazing</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-12 00:00:00">October 12, 2024</time> under the <a class="p-category" href="https://jamesg.blog/life/">Life</a> category.</p>
+    <blockquote>
+    </blockquote></li>
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/11/in-design-craft/">in design, craft: this week in my blog</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-11 00:00:00">October 11, 2024</time> under the <a class="p-category" href="https://jamesg.blog/weeknote/">Weeknote</a> category.</p>
+    <p>Over the last few months, I have been striving to learn more about design. With the help of friends, I have been building the muscle of stopping to look at web pages and asking myself many questions, like: What is the purpose of this web page?, ...</p>
+    </li>
+    <li class="h-entry list_entry">
+    <h3 class="p-name"><a class="u-url" href="https://jamesg.blog/2024/10/09/writing-duet/">The writing equivalent of a duet</a></h3>
+    <p>Published on <time class="dt-published" datetime="2024-10-09 00:00:00">October 09, 2024</time> under the <a class="p-category" href="https://jamesg.blog/ideas/">Ideas</a> category.</p>
+    <p>At <a href="https://indieweb.org/events/2024-10-08-hwc-writing">Homebrew Writing Club</a> yesterday, someone asked 'What is the writing equivalent of a duet?' I explore this concept with reference to collaborative writing, then extend the idea further of applying musical metaphors to writing. This led to thinking about the literary equivalent of playlists, remixing, and more.</p>
+    </li>
+    </ul>
+    <p><a href="https://jamesg.blog/post/">View all blog posts</a></p>
+    </div>
+    <style>
+        .search-box {
+            display: grid;
+            grid-template-columns: 3fr 0.01fr 1fr;
+            grid-gap: 1em;
+        }
+        input[type="text"] {
+            width: 100%;
+            font-size: 1em;
+            border-radius: 0.5em;
+            border: 0.1em solid lightgrey;
+            padding: 0.5em;
+        }
+        button {
+            border-radius: 0.5em;
+            cursor: pointer;
+            outline: none;
+            font-size: 1em;
+            border: 0.1em solid lightgrey;
+        }
+        button:hover {
+            background-color: rgb(208, 208, 208);
+            color: black;
+        }
+        button:focus {
+            background-color: rgb(255, 225, 116);
+            color: black;
+            font-weight: 600;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            background-color: rgb(255, 225, 116);
+            border: 0.1em solid lightgrey;
+            outline: none;
+        }
+    </style>
+    <script>
+    document.addEventListener('keydown', function (e) {
+            if (e.key === '/' && document.activeElement !== document.querySelector('input[name="q"]')) {
+                document.querySelector('input[name="q"]').focus();
+                // clear the input
+                document.querySelector('input[name="q"]').value = '';
+                e.preventDefault();
+            }
+        });
+    </script>
+    <p class="accessibility_label">
+    <a href="#main" id="back-to-top">Go Back to the Top</a>
+    </p>
+    </div>
+    </main>
+    <script>
+                document.addEventListener("keydown", function (event) {
+                    if (event.metaKey && event.key === "k") {
+                        event.preventDefault();
+                        window.location.href = "/search-pages/?from=page";
+                    }
+                });
+            </script>
+    
+    </body></html>

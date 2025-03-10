@@ -59,6 +59,8 @@
       margin: 20px 0; /* Margin around the section */
       border-radius: 8px; /* Rounded corners */
       background-color: #0a0a0a25; /* White background */
+      border-width: 1em;
+      line-height: 1em;
   }
   
   iframe {
@@ -129,6 +131,7 @@
     color: var(--primary-color);
     text-decoration: none;
     border-bottom: 0.1em dotted var(--primary-color);
+    
   }
   
   a:hover, a:active, .hover_link {
