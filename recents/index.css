@@ -46,7 +46,7 @@
       padding: 2em;
       border-radius: 0em;
   }
-  
+   
   html {
     background-color: #f7f7f7;
     border-top: 0.5em solid var(--primary-color);
@@ -60,7 +60,7 @@
       border-radius: 8px; /* Rounded corners */
       background-color: #0a0a0a25; /* White background */
       border-width: 1em;
-      line-height: 1em;
+     
   }
   
   iframe {
