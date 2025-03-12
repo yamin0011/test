@@ -51,8 +51,25 @@ html {
   background-color: #f7f7f7;
   border-top: 0.5em solid var(--primary-color);
   max-width: 100%;
+  background-image: image;
 }
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('eye.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;  /* Set opacity to 10% */
+  z-index: -1; /* Make sure the image is behind the section content */
+}
+
 section{
+  position: relative;
   text-align: justify;
   border: 2px solid #0f0f0f81; /* Solid black border */
     padding: 20px;
@@ -60,6 +77,7 @@ section{
     border-radius: 8px; /* Rounded corners */
     background-color: #0a0a0a25; /* White background */
 }
+
 
 iframe {
   width: 100%;
@@ -69,7 +87,13 @@ iframe {
 body {
   max-width: 50em;
   margin: auto;
-}
+ 
+  
+  
+  background-size: cover;  /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  
 
 main {
   display: grid;
@@ -87,6 +111,7 @@ main {
 article {
   padding-right: 1em;
 }
+
 
 article img {
   width: 100%;
