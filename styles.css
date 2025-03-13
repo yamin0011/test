@@ -85,6 +85,7 @@ iframe {
 }
 
 body {
+  
   max-width: 50em;
   margin: auto;
  
@@ -93,6 +94,10 @@ body {
   background-size: cover;  /* Ensures the image covers the entire background */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
+  
+   
+    
+}
   
 
 main {
@@ -424,4 +429,6 @@ nav {
   li .hide-on-desktop {
     display: inline;
   }
-}
+ /* Define the body animation */
+ 
+    
