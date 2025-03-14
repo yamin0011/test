@@ -1,0 +1,69 @@
+[
+    {
+      "title": "Home",
+      "description": "Welcome to My Homepage.",
+      "url": "/index.html"
+    },
+    {
+      "title": "About Me",
+      "description": "Learn more about Me.",
+      "url": "/about.html"
+    },
+   
+    {
+      "title": "Contact",
+      "description": "Get in touch with me.",
+      "url": "/about.html#dedications"
+    },
+    {
+        "title": "AQL Records Research",
+        "description": "Learn more about My AQL and Read My Research .",
+        "url": "https://yamin0011.github.io/test/Aql Records/index.html"
+      },
+      {
+        "title": "Archives",
+        "description": "Learn more about My AQL and Read My Research .",
+        "url": "https://yamin0011.github.io/test/archives/index.html"
+      },
+      {
+        "title": "Poetry",
+        "description": " Read My Poems .",
+        "url": "https://yamin0011.github.io/test/Poetry/index.html"
+      },
+      {
+        "title": "Poetry",
+        "description": " Read My Poem on Dajjal(Anti Christ) .",
+        "url": "https://yamin0011.github.io/test/Poetry/Dajjal.html"
+      },
+      {
+        "title": "Poetry",
+        "description": " Read My Poem on Nimaz(Salat) .",
+        "url": "https://yamin0011.github.io/test/Poetry/nimaz.html"
+      },
+      {
+        "title": "Poetry",
+        "description": " Read My Poem on Sorrow(Gham) .",
+        "url": "https://yamin0011.github.io/test/Poetry/Gham.html"
+      },
+      {
+        "title": "End Times",
+        "description": " Read The Hadees Related To End Times(Eschatology) .",
+        "url": "https://yamin0011.github.io/test/Quran/Hadith/B-O-Fitn/chapter1.html"
+      },
+      {
+        "title": "Tafheem Ul Quran",
+        "description": " Listen To The Audio Of Tafseer Of Tafheem Ul Quran Written By Maulana Maududi .",
+        "url": "https://yamin0011.github.io/test/Quran/Quranic/Tafheem.html"
+      },
+      {
+        "title": "Bayan Ul Quran",
+        "description": " Listen To The Audio Of Tafseer Of Bayan Ul Quran Written By Dr Israr  .",
+        "url": "https://yamin0011.github.io/test/Quran/Quranic/israr/Bayan.html"
+      },
+      {
+        "title": "Seerah Audio/Mp3",
+        "description": " Listen To The Audio About Prophet Muhammad s.a.w Seerah by Imam Anwar Al Awlaki  .",
+        "url": "https://yamin0011.github.io/test/Quran/Scholars/Seerah.html"
+      } 
+  ]
+  
