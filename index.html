@@ -116,7 +116,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <ul>
 <li><a class="p-author" href="https://yamin0011.github.io/test/" rel="home author">Home</a></li>
 <li><a href="https://yamin0011.github.io/test/Aql Records/index.html">Aql Records</a></li>
-<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li>
+<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li> 
 <li><a href="https://yamin0011.github.io/test\Meeqat.html">Meeqat</a></li>
 <li><a href="https://yamin0011.github.io/test/Poetry/index.html">Poetry</a></li>
 <li><a href="https://yamin0011.github.io/test/Dbsmith/Dbs.html">D.B.Smith</a></li>
@@ -135,6 +135,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </nav>
 <div id="main">
      
+
+
 <!-- My bio is structured as a h-card, a way of representing profile information on the web.
 h-card isn't widely used, and I don't recommend adding it if you are new to the web.
 If you are interested, you can learn more about h-card at https://microformats.org/wiki/h-card.
@@ -146,6 +148,217 @@ If you are interested, you can learn more about h-card at https://microformats.o
 <p>I hope this website  brings joy into your day.</p>
 <!-- I hope you are having a wonderful day! -->
 <h2>Works</h2>
+<style>
+     
+      /* Container for the date */
+      .date-container {
+          
+          border-radius: 2px;
+          padding: 
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          max-width: 400px;
+          width: fit-content;
+      }
+
+      /* Title for the date */
+      h1 {
+          font-size: 24px;
+          margin-bottom: px;
+          color: #4A90E2;  /* Light blue title for a professional tone */
+          font-weight: bold;
+      }
+
+      /* The date styling */
+      .current-date {
+          font-size: 16px;
+          font-weight: 600;
+          color: #2C3E50; /* Dark, elegant color for the date */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
+      }
+      .search-container {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #searchResults {
+            margin-top: 20px;
+        }
+
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search container */
+        .search-container {
+            width: 10%;
+            max-width: 400px;
+            padding: 0px;
+            background-color: #f0eeee;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Search input box */
+        #searchInput {
+            width: 90%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: 2px solid #111111;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Search results styling */
+        #searchResults {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+            font-size: 16px;
+        }
+
+        #searchResults li {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
+            transition: all 0.3s ease;
+        }
+
+        #searchResults li:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        #searchResults li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+
+        
+
+        /* No results message */
+        #searchResults li.no-results {
+            color: #777;
+            font-style: italic;
+            text-align: center;
+        }
+
+      
+  </style>
+</head>
+<body>
+
+  <div class="date-container">
+      
+      <small><p class="current-date" id="currentDate"></p></small>
+  </div>
+
+  
+  <script>
+      
+      // Get the current date
+      const today = new Date();
+
+      // Get the full date components
+      const day = today.getDate();
+      const month = today.toLocaleString('default', { month: 'long' }); // Full month name
+      const year = today.getFullYear();
+
+      // Format the date string (e.g., March 13, 2025)
+      const formattedDate = `${month} ${day}, ${year}`;
+
+      // Set the content of the element to show the date
+      document.getElementById("currentDate").textContent = formattedDate;
+  </script>
+<h1>Website Search</h1>
+
+<input type="text" id="searchInput" placeholder="Search..." oninput="search()">
+
+<ul id="searchResults"></ul>
+
+<script>
+     let data = []; // This will hold the JSON data
+
+// Fetch JSON data from the file
+fetch('search.json')
+    .then(response => response.json())
+    .then(json => {
+        data = json; // Assign JSON data to the variable
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+
+// Function to search and filter results based on the query
+function search() {
+    const query = document.getElementById('searchInput').value.toLowerCase(); // Get the search query
+
+    // Filter data based on the query matching either the title or description
+    const filteredResults = data.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.description.toLowerCase().includes(query)
+    );
+
+    // Display the filtered results
+    displayResults(filteredResults);
+}
+
+// Function to display search results dynamically
+function displayResults(results) {
+    const resultsContainer = document.getElementById('searchResults');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (results.length > 0) {
+        // If results are found, display them
+        results.forEach(item => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = item.url; // Set the URL for the link
+            link.textContent = `${item.title}: ${item.description}`; // Display the title and description
+
+            listItem.appendChild(link); // Append the link to the list item
+            resultsContainer.appendChild(listItem); // Append the list item to the results container
+        });
+    } else {
+        // If no results found, display a message
+        resultsContainer.innerHTML = '<li>No results found</li>';
+    }
+}
+</script>
+
+
+
+  
+</body>
+
+
+
+
+
+
 <section id="Rec">
       <h1><a style="font-family: 'Times New Roman', Times, serif; " href="https://yamin0011.github.io/test/archives/index.html#Rec" > Recent Updations</a> </h1> 
       <li> Quran Updated  With Complete Audio Bayan-ul-Quran (Dr Israr) </li>
