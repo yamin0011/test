@@ -1,0 +1,71 @@
+[
+    {
+      "title": "Home",
+      "url": "/index.html",
+      "description": "Welcome to My Homepage."
+    },
+    {
+      "title": "About me",
+      "url": "/about.html",
+      "description": "Learn more about Me."
+    },
+    {
+      "title": "Poems",
+      "url": "https://yamin0011.github.io/test/Poetry/Dajjal.html",
+      "description": "Dajjal   My Own Poems Iqbal Dr israr."
+    },
+    {
+      "title": "Contact",
+      "url": "/about.html",
+      "description": "Get in Touch With Me."
+    },
+    {
+        "title": "Archives",
+        "url": "https://yamin0011.github.io/test/archives/index.html",
+        "description": "Old Records archives recents history  "
+    },
+    {
+        "title": "Aql Records",
+        "url": "https://yamin0011.github.io/test/Aql Records/index.html",
+        "description": "My Own Research Related to Religion And Human Thought."
+    },
+    
+    {
+        "title": "Poems",
+        "url": "https://yamin0011.github.io/test/Poetry/Gham.html",
+        "description": " Sorrow , My Own Poems, Iqbal Dr israr."
+    },
+    {
+        "title": "Poems",
+        "url": "https://yamin0011.github.io/test/Poetry/nimaz.html",
+        "description": " Nimaz salat  , My Own Poems, Iqbal Dr israr ."
+    },
+    {
+        "title": " allPoems",
+        "url": "https://yamin0011.github.io/test/Poetry/index.html",
+        "description": "Dajjal Namaz Sorrow , My Own Poems, Iqbal Dr israr."
+    },
+    {
+        "title": "hadees",
+        "url": "https://yamin0011.github.io/test/Quran/Hadith/index.html",
+        "description": "hadees, seerah, hadith , Prophet Muhammad , Allah, Islam."
+    },
+    {
+        "title": "hadees",
+        "url": "https://yamin0011.github.io/test/Quran/Hadith/B-O-Fitn/chapter1.html",
+        "description": "hadees,  seerah, hadith , Prophet Muhammad , Allah, Islam end times , dajjal, esa ."
+    },
+    {
+        "title": "Seerah",
+        "url": "https://yamin0011.github.io/test/Quran/Scholars/Seerah.html",
+        "description": "hadees, seerah, hadith , Prophet Muhammad ,mecca,madina, Allah, Islam, Imam Anwar Al Awlaki."
+    },
+    {
+        "title": "Seerah",
+        "url": "https://yamin0011.github.io/test/Quran/Scholars/Seerah.html",
+        "description": "hadees, seerah, hadith , Prophet Muhammad ,mecca,madina, Allah, Islam, Imam Anwar Al Awlaki."
+    }
+
+      
+]
+  
