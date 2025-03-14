@@ -68,6 +68,7 @@ section::before {
   z-index: -1; /* Make sure the image is behind the section content */
 }
 
+box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
 section{
   position: relative;
   text-align: justify;

@@ -53,6 +53,7 @@
     max-width: 100%;
   }
   section{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
     text-align: justify;
     border: 2px solid #0f0f0f81; /* Solid black border */
       padding: 20px;
