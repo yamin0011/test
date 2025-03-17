@@ -43,7 +43,7 @@ h4 {
 
 pre {
     white-space: pre-wrap;
-    background-color: #030303;
+    background-color: #2fe60b;
     padding: 2em;
     border-radius: 0em;
 }
@@ -242,7 +242,7 @@ a:focus, .focused_link {
   gap: 10px;
 }
 code{
-  color: rgb(238, 10, 10);
+  color: rgb(0, 0, 0);
 }
 
 .list_entry {
@@ -325,8 +325,8 @@ th, td {
 }
 
 code {
-  font-family: monospace;
-    background-color: #e0dfdf;
+  font-family: 'Times New Roman', Times, serif
+    background-color: #27f80b;
   padding: 0.25em;
   border-radius: 0.25em;
 }
