@@ -332,7 +332,7 @@ function search() {
     const filteredResults = data.filter(item => 
         item.title.toLowerCase().includes(query) || 
         item.description.toLowerCase().includes(query)
-    );
+    ); 
 
     // Display the filtered results
     displayResults(filteredResults);
