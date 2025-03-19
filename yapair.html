@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+<h1 style="font-family: cursive; font-size: large; font-weight: bolder; word-spacing: 10px; text-align: center;"> S e a r c h -W e b s i t e </h1>
+
+<input type="text" id="searchInput" placeholder="Search Through My AQL......." oninput="search()">
+
+<ul id="searchResults"></ul>
+<script>
+    let data = []; // This will hold the JSON data
+
+    // Fetch JSON data from the file
+    fetch('search.json')
+        .then(response => response.json())
+        .then(json => {
+            data = json; // Assign JSON data to the variable
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+
+    // Debounced search function
+    let debounceTimeout;
+    function search() {
+        clearTimeout(debounceTimeout); // Clear previous timeout
+        debounceTimeout = setTimeout(() => {
+            const query = document.getElementById('searchInput').value.toLowerCase(); // Get the search query
+
+            if (query.trim() === '') {
+                displayResults([]); // Show no results if the query is empty
+                return;
+            }
+
+            // Filter data based on the query matching either the title or description
+            const filteredResults = data.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.description.toLowerCase().includes(query)
+            ); 
+
+            // Display the filtered results
+            displayResults(filteredResults);
+        }, 300); // Delay the search by 300ms to limit the number of function calls
+    }
+
+    // Function to display search results dynamically
+    function displayResults(results) {
+        const resultsContainer = document.getElementById('searchResults');
+        resultsContainer.innerHTML = ''; // Clear previous results
+
+        if (results.length > 0) {
+            // If results are found, display them
+            results.forEach(item => {
+                const listItem = document.createElement('li');
+
+                const titleElement = document.createElement('span');
+                titleElement.classList.add('title'); // Add class for title
+                titleElement.textContent = item.title;
+
+                const descriptionElement = document.createElement('span');
+                descriptionElement.classList.add('description'); // Add class for description
+                descriptionElement.textContent = `: ${item.description}`;
+
+                const link = document.createElement('a');
+                link.href = item.url; // Set the URL for the link
+                link.appendChild(titleElement); // Append the title to the link
+                link.appendChild(descriptionElement); // Append the description to the link
+
+                listItem.appendChild(link); // Append the link to the list item
+                resultsContainer.appendChild(listItem); // Append the list item to the results container
+            });
+        } else {
+            // If no results found, display a message
+            resultsContainer.innerHTML = '<li>No results found</li>';
+        }
+    }
+
+    // Add event listener for the search input field
+    document.getElementById('searchInput').addEventListener('input', search);
+</script>
+
+<style>
+    /* CSS to style title and description differently */
+    .title {
+        font-weight: bold;
+        font-size: 16px;
+        color: #007bff; /* Blue color for titles */
+    }
+
+    .description {
+        font-style: italic;
+        font-size: 14px;
+        color: #555; /* Grey color for descriptions */
+    }
+
+    #searchResults li {
+        margin-bottom: 10px;
+    }
+
+    #searchResults a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hover effect for search result items */
+    #searchResults a:hover {
+        background-color: #f1f1f1;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
