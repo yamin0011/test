@@ -281,6 +281,37 @@ If you are interested, you can learn more about h-card at https://microformats.o
             font-style: italic;
             text-align: center;
         }
+        .more-content {
+            display: none;
+        }
+
+        /* Button Styling */
+        #toggle-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 07px 12px;
+            font-size: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            align-content: flex-end;
+        }
+        /* Position the button on the right */
+        .button-container {
+            text-align: right;
+            margin-top: 01px;
+        }
+
+        #toggle-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #toggle-button:active {
+            background-color: #004085;
+            transform: translateY(0);
+        }
 
       
   </style>
@@ -338,8 +369,12 @@ function displayResults(results) {
     }
 }
 </script>
+
+
 <p style=     "text-align: justify;">Daryl Bradford Smith's research and internet radio show The French Connection on Zionism have woken up many people to the problems we face today. He was an early pioneer on the internet in the world truth movement.
 
+      <span class="more-content">
+    
       Some of history’s darkest chapters involved brutal coercion of people because certain other people believed themselves to be “The chosen people of God”.
       
       Judaizing requires the DESTRUCTION of every kind of identity that is not the preservation of Jews. If you do not demand the destruction of all loyalties except loyalty to Jews, 'God's Chosen People', you are committing blasphemy in the eyes of Jewish Law AND gentile judaizers alike.
@@ -348,7 +383,24 @@ function displayResults(results) {
       
       For OUR racial and other identities to survive, we must stop people who are judaizing us in our own nations. Most of them today are NOT Jews.
       
-      And see them to a place where they can ONLY spread that hostility to each other.</p>
+      And see them to a place where they can ONLY spread that hostility to each other "See more".</span></p>
+      <div class="button-container">
+            <button id="toggle-button">See More</button>
+        </div>
+      <script>
+            document.getElementById('toggle-button').addEventListener('click', function() {
+                const moreContent = document.querySelector('.more-content');
+                const button = document.getElementById('toggle-button');
+                
+                if (moreContent.style.display === 'none') {
+                    moreContent.style.display = 'inline';
+                    button.textContent = 'See Less';
+                } else {
+                    moreContent.style.display = 'none';
+                    button.textContent = 'See More';
+                }
+            });
+        </script>
 
 <section>
     <h1 style="font-family: cursive; text-align: center; font-size: larger; color: black;"> Guests  </h1> 
