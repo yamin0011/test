@@ -416,6 +416,71 @@ If you are interested, you can learn more about h-card at https://microformats.o
         padding: 5px;
         border-radius: 5px;
     }
+
+
+
+
+    .recent-scroll {
+  width: auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.recent-scroll h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: cursive;
+}
+
+.recent-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 04px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.recent {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.recent img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.movie img:hover{
+    transform: scale(1.05s);
+}
+
+.recent p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.recent-container::-webkit-scrollbar {
+  height: 2px;
+}
+
+.recent-container::-webkit-scrollbar-thumb {
+  background-color: #faf9f9;
+  border-radius: 05px;
+}
+
+.recent-container::-webkit-scrollbar-thumb:hover {
+  background-color: #faf6f6;
+}
+
+.recent-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
 </style>
 
 
@@ -428,17 +493,37 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
 
 
-<section style="break-before: always; background-color: white;" id="Rec">
-      <h1><a style="font-family: 'Times New Roman', Times, serif; " href="https://yamin0011.github.io/test/archives/index.html#Rec" > Recent Updations&#8594;</a> </h1> 
-      <li> Dbsmith section updated with great interviews(4 Years Of Work)  </li>
-      <li> Quran Updated  With Complete Audio Bayan-ul-Quran (Dr Israr) </li>
-      <li> Hadith section Updated with Complete Seerah And Kitab-al-Fitn chapter1</li>
-      <li> Quran Updated  With Complete Audio Tafheem-ul-Quran (Maulana Maududi) </li>
-      
-      
 
-      
+<section class="recent-scroll" id="Rec">
+    <h1><a style="font-family: 'Times New Roman', Times, serif; " href="https://yamin0011.github.io/test/archives/index.html#Rec" > Recent Updations&#8594;</a> </h1> 
+    <div class="recent-container">
+      <div class="recent">
+      <a href="https://yamin0011.github.io/test/Dbsmith/Dbs.html" target="_blank">
+        <img src="daryl.jpg" alt="R 1" >
+        <p>D.B.Smith</p>
+      </a>
+    </div>
+      <div class="recent">
+        <a href="https://yamin0011.github.io/test/Quran/Quranic/israr/Bayan.html" target="_blank">
+            <img src="bani.png" alt="R 1" >
+            <p>  Bayan-ul-Quran</p>
+          </a>
+      </div>
+      <div class="recent">
+        <a href="https://yamin0011.github.io/test/Quran/Scholars/Seerah.html" target="_blank">
+            <img src="anwar.jfif" alt="R 1" >
+            <p>Seerah by Imam Anwar </p>
+          </a>
+      </div>
+      <div class="recent">
+        <a href="https://yamin0011.github.io/test/Quran/index.html" target="_blank">
+            <img src="maududi.jpg" alt="R 1" >
+            <p>  Tafheem-ul-Quran</p>
+          </a>
+      </div>  
+    </div>
 </section>
+
 
       <h1><a    href="https://yamin0011.github.io/test/Quran/Hadith/B-O-Fitn/chapter1.html#Fitn" style="font-family: 'Times New Roman', Times, serif; ;">From B-O-Fitn&#8594; </a></h1> 
       <a style="color: red;" name="041_6895" href="https://yamin0011.github.io/test/Quran/Hadith/B-O-Fitn/chapter1.html#041_6895 ">
