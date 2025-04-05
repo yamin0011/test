@@ -130,21 +130,64 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <body>
     
+      
+    
     <section>
     <div class="container">
         <h4>مسجد أبو بكر رضي الله عنه  |  Masjid Abu  Bakr </h4>
        <!-- <a href="https://yamin0011.github.io/test/">Home</a> -->
+       <h1 style="text-align: center;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
 
-        <div class="time-date-section center-block">
-            <img src="https://www.ahlesunnatpak.com/images/icons/night.png" class="moon" width="17px" height="auto">
-            <span  id="arabic-date">Thursday, 04 Shawal 1446 AH</span>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/alhabib/1.0.3/alhabib.min.js"></script>
 
-            <span>April 03 2025 </span>
-        </div>
-        
+    <p style="font-family: 'Times New Roman', Times, serif; "> <span id="islamic-date"></span></p>
+
+    <script>
+        // Wait for the page to load before running the script
+        window.onload = function() {
+          var islamicDate = new Date().toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          });
+      
+          // Convert the current date to Islamic (Hijri) format using the Alhabib library
+          var hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+            day: 'numeric', 
+            month: 'long', 
+            year: 'numeric'
+          }).format(new Date());
+      
+          // Display the Islamic (Hijri) date
+          document.getElementById('islamic-date').innerText = hijriDate;
+        }
+      </script>
+      <div class="date-container">
+      
+      <small><p class="current-date" id="currentDate"></p></small>
+  </div>
+
+  
+  <script>
+      
+      // Get the current date
+      const today = new Date();
+
+      // Get the full date components
+      const day = today.getDate();
+      const month = today.toLocaleString('default', { month: 'long' }); // Full month name
+      const year = today.getFullYear();
+
+      // Format the date string (e.g., March 13, 2025)
+      const formattedDate = `${month} ${day}, ${year}`;
+
+      // Set the content of the element to show the date
+      document.getElementById("currentDate").textContent = formattedDate;
+  </script>
         <table>
 
-            <h1 style="text-align: center;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
+            
             <h2 style="text-align: center;">
                        إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا
             </h2>
@@ -162,9 +205,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </thead>
             <tbody>
                 <tr>
-                    <td>5:35 AM</td>
+                    <td>5:30 AM</td>
                     <td>الفجر (Fajr)</td>
-                    <td>04:54 AM</td>
+                    <td>04:50 AM</td>
                     
                 </tr>
                 <tr>
@@ -181,12 +224,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <tr>
                     <td>6:58 PM</td>
                     <td>المغرب (Maghrib)</td>
-                    <td>06:52 PM</td>
+                    <td>06:54 PM</td>
                 </tr>
                 <tr>
                     <td>8:25 PM</td>
                     <td>العشاء (Isha)</td>
-                    <td>08:10 PM</td>
+                    <td>08:15 PM</td>
                 </tr>
                 
             </tbody>
@@ -202,14 +245,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                    
                 </tr>
                 <tr>
-                    <td>06:52PM</td>
+                    <td>06:54PM</td>
                    <td>إفطار/ غروب آفتاب
                 </td>
                    
                    
                 </tr>
                 <tr>
-                    <td>04:54 AM</td>
+                    <td>04:50 AM</td>
                     <td>ختم سحري و صباح صديق
                  </td>
                    
