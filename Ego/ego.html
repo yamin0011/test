@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link as="style" href="styles.css" rel="preload"/>
+<link as="font" crossorigin="" href="/assets/fonts/standard-book-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="script" href="/assets/js/seasonal.js" rel="preload"/>
+<title>Yamin's Aql</title>
+<!-- styles.css contains the CSS that styles most of this website. -->
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://news.ycombinator.com/user?id=zerojames" rel="me"/>
+<link href="https://orcid.org/0009-0006-3736-1653" rel="me"/>
+<!-- This is used to optimise my website for mobile use.
+      See https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag for more information about what the tag means. -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<link href="alien" rel="icon"/>
+
+</head>
+<body>
+      
+
+      <style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+
+
+<main>
+<!-- Skip link so that screen reader users can skip narration of the navigation bar. -->
+<nav>
+<div id="navigation_meta">
+<a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
+
+<p>
+<a href="https://yamin0011.github.io/test/">
+<img alt="Yamin's Aql" class="mascot" height="76" src="alien"  width="80" />
+</a>
+</p>
+
+<p  class="site-name" href="https://yamin0011.github.io/test/">Yamin's Aql   <span aria-hidden="true"  class="seasonal_emoji">🌌 </span>  </p>
+<em style="color: white;">Remember, That is The Way .</em>
+</div>
+
+<p  class="hide-on-desktop site-name-mobile" href="https://yamin0011.github.io/test/">Yamin's Aql <span aria-hidden="true" class="seasonal_emoji">☕</span></p>
+<ul>
+<li><a class="p-author" href="https://yamin0011.github.io/test/" rel="home author">Home</a></li>
+<li><a href="https://yamin0011.github.io/test/Aql Records/index.html">Aql Records</a></li>
+<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li> 
+<li><a href="https://yamin0011.github.io/test\Meeqat.html">Meeqat</a></li>
+<li><a href="https://yamin0011.github.io/test/Poetry/index.html">Poetry</a></li>
+<li><a href="https://yamin0011.github.io/test/Dbsmith/Dbs.html">D.B.Smith</a></li>
+<li><a href="about.html">About</a></li>
+<li><a aria-label="Show or hide navigation links" style="color: #e9e4e4;"
+      class="hide-on-desktop" href="#" onclick="document.querySelector('#extended_nav').classList.toggle('hide-on-mobile'); return false;">[ ++ ]</a></li>
+<div class="hide-on-mobile" id="extended_nav">
+
+
+<li><a href="https://aadhibaat.org/">Wander</a></li>
+<li><a href="https://libgen.li/index.php">Download Any Book</a></li>
+</div>
+</ul>
+
+
+</nav>
+<div id="main">
+     
+
+
+<!-- My bio is structured as a h-card, a way of representing profile information on the web.
+h-card isn't widely used, and I don't recommend adding it if you are new to the web.
+If you are interested, you can learn more about h-card at https://microformats.org/wiki/h-card.
+-->
+<div class="h-feed hfeed intro h-card p-author">
+
+<p class="p-note">Hey سلام I'm <a class="p-name u-url p-given-name" href="https://yamin0011.github.io/test/">Yamin Manzoor</a> (<a class="u-sound p-ipa" href="https://yamin0011.github.io/test/" rel="pronunciation">/yameh won/</a>) .
+       I live in <span class="p-country-name">Kashmir</span>. This is my blog.</p>
+       
+<p>I hope this website  brings joy into your day.</p>
+<!-- I hope you are having a wonderful day! -->
+<h2 style="font-family: 'Times New Roman', Times, serif; font-size: xlarger;" >Works</h2>
+
+
+<style>
+    /* CSS to style title and description differently */
+    .title {
+        font-weight: bold;
+        font-size: 16px;
+        color: #007bff; /* Blue color for titles */
+    }
+
+    .description {
+        font-style: italic;
+        font-size: 14px;
+        color: #555; /* Grey color for descriptions */
+    }
+
+    #searchResults li {
+        margin-bottom: 10px;
+    }
+
+    #searchResults a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hover effect for search result items */
+    #searchResults a:hover {
+        background-color: #f1f1f1;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+
+
+
+    .recent-scroll {
+  width: auto;
+  padding: 1px;
+  background-color: #0707078f;
+}
+
+.recent-scroll h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: cursive;
+}
+
+.recent-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 5px;
+  padding: 02px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.recent {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.recent img {
+  width: 85%; 
+  height: 165px;
+  object-fit: cover;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 3.4);
+  
+}
+
+.recent img:hover{
+    transform: scale(1.05s);
+    background-color: #000000;
+}
+
+.recent p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f0eded;
+}
+
+.recent-container::-webkit-scrollbar {
+  height: 2px;
+}
+
+.recent-container::-webkit-scrollbar-thumb {
+  background-color: #faf9f9;
+  border-radius: 05px;
+}
+
+.recent-container::-webkit-scrollbar-thumb:hover {
+  background-color: #faf6f6;
+}
+
+.recent-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+
+
+  
+</body>
+
+
+
+
+
+
+
+<section class="recent-scroll" id="Rec">
+    <h1 style="font-family: 'Times New Roman', Times, serif; "  > Recent Updations </h1> 
+    <div class="recent-container">
+      <div class="recent">
+      <a href="https://yamin0011.github.io/test/Ego/self/self.html" target="_blank">
+        <img src="selfimg.jpg" alt="R 1" >
+        <p>Self Image Psychology</p>
+      </a>
+    </div>
+       
+    </div>
+</section>
+
+
+    
+           
+
+
+
+
+
+
+<footer style="text-align: center;">
+      <p>&copy; 2025 Yamin's Aql</p>
+  </footer>
+ 
