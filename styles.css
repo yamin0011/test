@@ -49,7 +49,7 @@ pre {
 }
 
 html {
-  background-color: #d4e6c4;
+  background-color: #0c0c0c;
   border-top: 0.5em solid var(--primary-color);
   max-width: 100%;
   background-image: image;
@@ -72,7 +72,7 @@ section::before {
 section{
   position: relative;
   text-align: justify;
-  border: 2px solid #0f0f0f81; /* Solid black border */
+  border: 2px solid #0f0f0f21; /* Solid black border */
     padding: 20px;
     margin: 20px 0; /* Margin around the section */
     border-radius: 8px; /* Rounded corners */
@@ -154,7 +154,7 @@ nav ul li {
   padding-right: 1em;
 }
 p{
-  color: #111111;
+  color: #f1eeee;
 }
 
 a {
@@ -242,7 +242,7 @@ a:focus, .focused_link {
   gap: 10px;
 }
 code{
-  color: rgb(0, 0, 0);
+  color: rgb(245, 241, 241);
 }
 
 .list_entry {
