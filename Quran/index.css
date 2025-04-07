@@ -48,17 +48,17 @@ pre {
 }
 
 html {
-  background-color: #f7f7f7;
+  background-color: #eceaea94;
   border-top: 0.5em solid var(--primary-color);
   max-width: 100%;
 }
 section{
   text-align: justify;
-  border: 2px solid #0f0f0f81; /* Solid black border */
-    padding: 20px;
-    margin: 20px 0; /* Margin around the section */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #0a0a0a25; /* White background */
+  border: 1px solid #0f0f0f81; /* Solid black border */
+    padding: 2px;
+    margin: 2px 1px; /* Margin around the section */
+    border-radius: 3px; /* Rounded corners */
+    background-color: #ffffffcc; /* White background */
 }
 
 iframe {
