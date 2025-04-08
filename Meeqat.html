@@ -138,39 +138,43 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
        <!-- <a href="https://yamin0011.github.io/test/">Home</a> -->
        <h1 style="text-align: center;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
 
-       <script src="https://cdn.jsdelivr.net/npm/hijri-date@2.0.5/dist/hijri.min.js"></script>
+        
+     
+       <div class="col-md-4 col-sm-12 col-xs-12 text-center">
+        <div class="time-date-section padding-remove text-center">
+            <img src="https://www.ahlesunnatpak.com/images/icons/night.png" class="img-responsive moon" width="17px" height="auto">
+            <span id="arabic-date"> 9 Shawwal 1446 AH</span>
+            
+        </div>
 
-
-    <p style="font-family: 'Times New Roman', Times, serif; "> <span id="islamic-date"></span></p>
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+</head>
+<body>
+    
+    <div id="currentDate"></div>
 
     <script>
-        // Wait for the page to load before running the script
-        window.onload = function() {
-          var islamicDate = new Date().toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          });
-      
-          // Convert the current date to Islamic (Hijri) format using the Alhabib library
-          var hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
-            day: 'numeric', 
-            month: 'long', 
-            year: 'numeric'
-          }).format(new Date());
-      
-          // Display the Islamic (Hijri) date
-          document.getElementById('islamic-date').innerText = hijriDate;
-        }
-      </script>
-      <div class="date-container">
-      
-      <small><p class="current-date" id="currentDate"></p></small>
-  </div>
+        // Get the current date and day using Day.js
+        const currentDate = dayjs();
 
-  
-  <script>
+        // Format the date as 'YYYY-MM-DD' with day of the week
+        const formattedDate = currentDate.format('dddd, DD-MM-YYYY');
+
+        // Display the date in the div
+        document.getElementById('currentDate').textContent = " " + formattedDate;
+    </script>
+</body>
+</html>
+
+
+ <!-- <script>
       
       // Get the current date
       const today = new Date();
@@ -185,7 +189,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
       // Set the content of the element to show the date
       document.getElementById("currentDate").textContent = formattedDate;
-  </script>
+  </script>-->
         <table>
 
             
