@@ -598,71 +598,21 @@ If you are interested, you can learn more about h-card at https://microformats.o
             background-color: #008CBA;
             color: white;
             padding: 1px 05px;
-            margin-bottom: 05px;
+            margin-bottom: 20px;
             cursor: pointer;
             font-size: 1.1em;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             border: none;
             margin: auto;
         }
-        .recite-button {
-            background-color: #008CBA;
-            color: white;
-            padding: 1px 05px;
-            font-size: 1.1em;
-            cursor: pointer;
-            margin-top: 05px;
-            border: none;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+       
     </style>
 </head>
 <body>
 <h1 style="text-align: center; font-family: sans-serif; font-size: small; "> الأربعون النووية | The Forty Hadith of Imam Nawawi R.a</h1>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Hadith</title>
-    <style>
-        /* Styling for Hadith display */
-        .hadith-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .arabic {
-            font-size: 1.5em;
-            color: green;
-            direction: rtl;
-        }
-        .english {
-            font-size: 1.2em;
-            color: black;
-        }
-        .source-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            font-size: 1.2em;
-            border: none;
-        }
-        .recite-button {
-            background-color: #008CBA;
-            color: white;
-            padding: 8px 16px;
-            font-size: 1.1em;
-            cursor: pointer;
-            margin-top: 10px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
+
 
 <div class="hadith-container">
     <!-- Button to show source -->
@@ -673,9 +623,9 @@ If you are interested, you can learn more about h-card at https://microformats.o
 </div>
 
 <script>
-// Function to load Hadith data from JSON file (now all.json)
+// Function to load Hadith data from JSON file
 function loadHadiths() {
-    return fetch('all.json')  // Fetch data from all.json file
+    return fetch('hadiths.json')  // Ensure 'hadiths.json' is in the same directory
         .then(response => response.json())
         .then(data => data.hadiths)  // Extract hadiths array from the data
         .catch(err => {
@@ -700,11 +650,10 @@ function displayHadith(hadiths) {
 
     // Prepare the Hadith text
     const hadithText = `
-        <div class="arabic" id="arabicText">${hadith.arabic}</div>
-        <button class="recite-button" id="reciteButton">Recite Arabic</button>
+        <div class="arabic">${hadith.arabic}</div>
         <div class="english">
-            <p><strong>${hadith.english.narrator}</strong></p>
-            <p>${hadith.english.text}</p>
+            <p><em>${hadith.english.narrator}</em></p>
+            <p><strong>${hadith.english.text}</strong></p>
         </div>
     `;
     
@@ -715,32 +664,6 @@ function displayHadith(hadiths) {
     document.getElementById("sourceBtn").addEventListener("click", function() {
         alert(`Source: Book ID: ${hadith.bookId}, Chapter ID: ${hadith.chapterId}`);
     });
-
-    // Add the recitation functionality to the button
-    document.getElementById("reciteButton").addEventListener("click", function() {
-        reciteArabic(hadith.arabic);
-    });
-}
-
-// Function to recite the Arabic text
-function reciteArabic(text) {
-    // Check if speech synthesis is supported
-    if ('speechSynthesis' in window) {
-        // Create a new SpeechSynthesisUtterance object
-        const utterance = new SpeechSynthesisUtterance(text);
-
-        // Set the language for the speech (Arabic)
-        utterance.lang = 'ar-SA';  // 'ar-SA' is the Arabic language code (Saudi Arabia accent)
-
-        // Optionally adjust the pitch and rate
-        utterance.pitch = 1;  // Normal pitch
-        utterance.rate = 1;   // Normal speed
-
-        // Speak the text
-        window.speechSynthesis.speak(utterance);
-    } else {
-        alert("Sorry, your browser does not support speech synthesis.");
-    }
 }
 
 // Load Hadiths and display one per day
@@ -748,6 +671,13 @@ loadHadiths().then(hadiths => {
     displayHadith(hadiths);
 });
 </script>
+
+</body>
+</html>
+
+
+
+
 
 </body>
 </html>
