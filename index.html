@@ -625,7 +625,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
 <script>
 // Function to load Hadith data from JSON file
 function loadHadiths() {
-    return fetch('hadiths.json')  // Ensure 'hadiths.json' is in the same directory
+    return fetch('all.json')  // Ensure 'hadiths.json' is in the same directory
         .then(response => response.json())
         .then(data => data.hadiths)  // Extract hadiths array from the data
         .catch(err => {
