@@ -467,7 +467,7 @@ html {
 table {
   background-color: transparent;
   width: 100%;
-  margin-block-end:15px;font-size: 1.2em;
+  margin-block-end:15px;font-size: 1.0em;
   border-spacing: 0;
   border-collapse: collapse
 }
