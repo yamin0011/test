@@ -297,47 +297,46 @@ If you are interested, you can learn more about h-card at https://microformats.o
   
   
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
-    </head>
-    <body>
-        
-        <p style="text-align: center;"> <span id="hijri-date"></span></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <script>
-            function showHijriDate() {
-              const today = new Date();
-              const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              }).format(today);
-          
-              document.getElementById("hijri-date").innerText = hijriDate;
-            }
-          
-            // Call the function on page load
-            window.onload = showHijriDate;
-          
-          </script>
-        <div id="currentDate"></div>
-    
-    
-        <script>
-            // Get the current date and day using Day.js
-            const currentDate = dayjs();
-    
-            // Format the date as 'YYYY-MM-DD' with day of the week
-            const formattedDate = currentDate.format('dddd, DD-MM-YYYY');
-    
-            // Display the date in the div
-            document.getElementById('currentDate').textContent = " " + formattedDate;
-        </script>
-    </body>
-    </html>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+</head>
+<body>
+    <p style="text-align: center;"> <span id="hijri-date"></span></p>
+
+    <script>
+        function showHijriDate() {
+          const today = new Date();
+          const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          }).format(today);
+      
+          document.getElementById("hijri-date").innerText = hijriDate;
+        }
+      
+        // Call the function on page load
+        window.onload = showHijriDate;
+      
+      </script>
+    <div id="currentDate"></div>
+
+
+    <script>
+        // Get the current date and day using Day.js
+        const currentDate = dayjs();
+
+        // Format the date as 'YYYY-MM-DD' with day of the week
+        const formattedDate = currentDate.format('dddd, DD-MM-YYYY');
+
+        // Display the date in the div
+        document.getElementById('currentDate').textContent = " " + formattedDate;
+    </script>
+
+
 
 
 <input type="text" id="searchInput" placeholder="Search Through My AQL......." oninput="search()">
