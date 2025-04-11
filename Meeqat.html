@@ -140,15 +140,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
         
      
-       <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-        <div class="time-date-section padding-remove text-center">
-            <img src="https://www.ahlesunnatpak.com/images/icons/night.png" class="img-responsive moon" width="17px" height="auto">
-            <span id="arabic-date"> 13 Shawwal 1446 AH</span>
-            
-        </div>
+       
 
     </div>
-    <!DOCTYPE html>
+    
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -157,8 +152,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
 </head>
 <body>
-    
+    <p style="text-align: center;"> <span id="hijri-date"></span></p>
+
+    <script>
+        function showHijriDate() {
+          const today = new Date();
+          const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          }).format(today);
+      
+          document.getElementById("hijri-date").innerText = hijriDate;
+        }
+      
+        // Call the function on page load
+        window.onload = showHijriDate;
+      
+      </script>
     <div id="currentDate"></div>
+
 
     <script>
         // Get the current date and day using Day.js
@@ -211,29 +224,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <tbody>
                 <tr>
                     <td>5:25 AM</td>
-                    <td style="color: green; font-weight: bold;" >الفجر (Fajr)</td>
+                    <td style="color: green; font-weight: bold;" >الفجر (Fajr)&#9925;</td>
                     <td>04:45 AM</td>
                     
                 </tr>
                 <tr>
                     <td>1:30 PM</td>
-                    <td style="color:green; font-weight: bold;">الظهر (Dhuhr)</td>
+                    <td style="color:green; font-weight: bold;">الظهر (Dhuhr)&#9728;</td>
                     <td>1:15 PM</td>
                     
                 </tr>
                 <tr>
                     <td>5:15 PM</td>
-                    <td style="color:green; font-weight: bold;">العصر (Asr)</td>
+                    <td style="color:green; font-weight: bold;">العصر (Asr)&#127781</td>
                     <td>05:05 PM</td>
                 </tr>
                 <tr>
                     <td>07:05 PM</td>
-                    <td style="color:green; font-weight: bold;">المغرب (Maghrib)</td>
+                    <td style="color:green; font-weight: bold;">المغرب (Maghrib)&#127780;</td>
                     <td>06:59 PM</td> <!--azaan-->
                 </tr>
                 <tr>
                     <td>8:35 PM</td>
-                    <td style="color:green; font-weight: bold;">العشاء (Isha)</td>
+                    <td style="color:green; font-weight: bold;">العشاء (Isha)&#127765;</td>
                     <td>08:25 PM</td>
                 </tr>
                 
