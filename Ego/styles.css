@@ -54,7 +54,7 @@ html {
   max-width: 100%;
   background-image: image;
 }
-section::before {
+/*section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -71,13 +71,13 @@ section::before {
 
 section{
   position: relative;
-  text-align: justify;
-  border: 2px solid #0f0f0f21; /* Solid black border */
+  
+  
     padding: 20px;
     margin: 20px 0; /* Margin around the section */
     border-radius: 8px; /* Rounded corners */
     background-color: #0a0a0a25; /* White background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
+    lex-direction:row;
 }
 
 
