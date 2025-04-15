@@ -306,22 +306,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
 <body>
     <p style="text-align: center;"> <span id="hijri-date"></span></p>
 
-    <script>
-        function showHijriDate() {
-          const today = new Date();
-          const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          }).format(today);
-      
-          document.getElementById("hijri-date").innerText = hijriDate;
-        }
-      
-        // Call the function on page load
-        window.onload = showHijriDate;
-      
-      </script>
+    
     <div id="currentDate"></div>
 
 
