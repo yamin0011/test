@@ -212,21 +212,20 @@ If you are interested, you can learn more about h-card at https://microformats.o
     }
 
     .audio-list {
-        display: -ms-flexbox;
-      max-width: 800px;
-      margin: 0 auto;
-      list-style: none;
-      padding: 0;
-      flex-direction: column;
+      display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  font-size: small;
+  
     }
 
     .audio-list li {
         
         color: white;
-      padding: 0.75rem 1rem;
-      margin: 0.2rem 0;
+      
+      margin: 0.1rem 0;
       background: #0c0c0cc4;
-      border-radius: 5px;
+      border-radius: 1px;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -240,18 +239,18 @@ If you are interested, you can learn more about h-card at https://microformats.o
   max-width: 600px;
   margin: 0 auto;
   height: auto;
-  border-radius: 8px;
+  border-radius: 1px;
   background-color: #0111f5;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 .audio-item {
     color: white;
       background-color: #080808;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 3px;
       cursor: pointer;
       flex: 1 1 20px;
-      max-width: 600px;
+      max-width: auto;
       text-align: center;
       margin-bottom: 05px;
     }
@@ -259,7 +258,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
   background-color: #ffcc00;
   color: #000;
   font-weight: bold;
-  box-shadow: 0 0 15px #ffcc00aa;
+  box-shadow: 0 0 15px #ffcc00;
 }
 .player-controls {
   display: flex;
@@ -290,7 +289,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
 <body>
 
-  <h1>🎙️Imam Anwar Al Awlaki</h1>
+  <h1><a href="https://yamin0011.github.io/test/Quran/Scholars/Seerah.html" >🎙️ Anwar Al Awlaki</a></h1>
 
   <!-- Cover Image + Custom Player -->
   <div class="player-wrapper">
@@ -298,9 +297,10 @@ If you are interested, you can learn more about h-card at https://microformats.o
     <audio id="mainAudioPlayer" controls></audio>
   </div>
   
-  
+  <p style="text-align: center; ">Works Of Imam Anwar Al Awlaki</p>
   <!-- Topic Buttons -->
   <div class="topic-list">
+    
     <button class="topic-btn" onclick="loadTopic('topic1', this)">(الآخرة) The Hereafter</button>
     <button class="topic-btn" onclick="loadTopic('topic2', this)">The Lives Of Prophets</button>
     <button class="topic-btn" onclick="loadTopic('topic3', this)">Topic 3</button>
@@ -323,60 +323,60 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
     const audioData = {
       topic1: [
-        { title: 'Introduction_-_Death', src: 'http://archive.org/download/nooor90/01_-_Introduction_-_Death.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Introduction_Death', src: 'http://archive.org/download/nooor90/01_-_Introduction_-_Death.mp3', img: 'anwarhereafter.jpg' },
         { title: 'Death', src: 'http://archive.org/download/nooor90/02_Death.mp3', img: 'anwarhereafter.jpg' },
         { title: 'Journey_Of_The_Soul', src: 'http://archive.org/download/nooor90/03_-_Journey_Of_The_Soul.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Minor_Signs_Of_The_Day_01-07', src: 'http://archive.org/download/nooor90/04_-_Minor_Signs_Of_The_Day_01-07.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Minor_Signs_Of_The_Day 5', src: 'http://archive.org/download/nooor90/05_-_Minor_Signs_Of_The_Day_08-18.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Minor_Signs_Of_The_Day 6', src: 'http://archive.org/download/nooor90/06_-_Minor_Signs_Of_The_Day_19-38.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Minor_Signs_Of_The_Day 7', src: 'http://archive.org/download/nooor90/07_-_Minor_Signs_Of_The_Day_39-52.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Major_Signs_1__Ad-Dajjal', src: 'http://archive.org/download/nooor90/08_-_Major_Signs_1__Ad-Dajjal.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Major_Signs__1__AdDajjal_an__Isa_AS', src: 'http://archive.org/download/nooor90/09_Major_Signs__1__AdDajjal_an__Isa_AS.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Major_Signs 10', src: 'http://archive.org/download/nooor90/10_-_Major_Signs_3-10.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'The_Resurrection 11', src: 'http://archive.org/download/nooor90/11_-_The_Resurrection.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'The_Non-Believers_On_The_Day 12', src: 'http://archive.org/download/nooor90/12_-_The_Non-Believers_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Punishment_For_Sins_-_Righteous_On_The_Day 13', src: 'http://archive.org/download/nooor90/13_-_Punishment_For_Sins_-_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Righteous_On_The_Day 14', src: 'http://archive.org/download/nooor90/14_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Names_And_Rules_Of_The_Hereafter 15', src: 'http://archive.org/download/nooor90/15_-_Names_And_Rules_Of_The_Hereafter.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Accountability 16', src: 'http://archive.org/download/nooor90/16_-_Accountability.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Hellfire_And_Its_Life 17', src: 'http://archive.org/download/nooor90/17_-_Hellfire_And_Its_Life.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Some_Actions_That_Lead_To_Hellfire 18', src: 'http://archive.org/download/nooor90/18_-_Some_Actions_That_Lead_To_Hellfire.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Ratio_Of_People_In_Hellfire_Compared_To_Paradise 19', src: 'http://archive.org/download/nooor90/19_-_Ratio_Of_People_In_Hellfire_Compared_To_Paradise.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'A_Tour_Of_Paradise 20', src: 'http://archive.org/download/nooor90/20_A_Tour_Of_Paradise.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'Socialization_In_Paradise 21', src: 'http://archive.org/download/nooor90/21_-_Socialization_In_Paradise.mp3', img: 'anwarhereafter.jpg' },
-        { title: 'The_People_Of_Paradise 22', src: 'http://archive.org/download/nooor90/22_-_The_People_Of_Paradise.mp3', img: 'anwarhereafter.jpg' }
+        { title: 'Minor_Signs', src: 'http://archive.org/download/nooor90/04_-_Minor_Signs_Of_The_Day_01-07.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs', src: 'http://archive.org/download/nooor90/05_-_Minor_Signs_Of_The_Day_08-18.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs', src: 'http://archive.org/download/nooor90/06_-_Minor_Signs_Of_The_Day_19-38.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs', src: 'http://archive.org/download/nooor90/07_-_Minor_Signs_Of_The_Day_39-52.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs Ad-Dajjal', src: 'http://archive.org/download/nooor90/08_-_Major_Signs_1__Ad-Dajjal.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs Isa_AS', src: 'http://archive.org/download/nooor90/09_Major_Signs__1__AdDajjal_an__Isa_AS.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs', src: 'http://archive.org/download/nooor90/10_-_Major_Signs_3-10.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_Resurrection', src: 'http://archive.org/download/nooor90/11_-_The_Resurrection.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_Non-Believers', src: 'http://archive.org/download/nooor90/12_-_The_Non-Believers_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Punishment_For_Sins', src: 'http://archive.org/download/nooor90/13_-_Punishment_For_Sins_-_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Righteous_On_The_Day', src: 'http://archive.org/download/nooor90/14_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Names_And_Rules', src: 'http://archive.org/download/nooor90/15_-_Names_And_Rules_Of_The_Hereafter.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Accountability', src: 'http://archive.org/download/nooor90/16_-_Accountability.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Hellfire_And_Its_Life', src: 'http://archive.org/download/nooor90/17_-_Hellfire_And_Its_Life.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Road To_Hellfire', src: 'http://archive.org/download/nooor90/18_-_Some_Actions_That_Lead_To_Hellfire.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'People in Hereafter', src: 'http://archive.org/download/nooor90/19_-_Ratio_Of_People_In_Hellfire_Compared_To_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'A_Tour_Of_Paradise', src: 'http://archive.org/download/nooor90/20_A_Tour_Of_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Socialization_In_Paradise', src: 'http://archive.org/download/nooor90/21_-_Socialization_In_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_People_Of_Paradise', src: 'http://archive.org/download/nooor90/22_-_The_People_Of_Paradise.mp3', img: 'anwarhereafter.jpg' }
 
         
       ],
       topic2: [
-        { title: ' Introduction – Story Of Creation 1', src: 'http://archive.org/download/Lives/CD01.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Adam (Cont.) – Idris – Sheeth – Hud 2', src: 'http://archive.org/download/Lives/CD02.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Hud (cont.) – Saleh – Ibrahim 3', src: 'http://archive.org/download/Lives/CD03.mp3', img: 'anwarprophets.jpg' },
-        { title: 'The Dawah Of Ibrahim/Hijra Of Ibrahim 4', src: 'http://archive.org/download/Lives/CD04.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Al-Kabah – Virtues Of Ibrahim – Lut 5', src: 'http://archive.org/download/Lives/CD05.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Shuaib – Yusuf 6', src: 'http://archive.org/download/Lives/CD06.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Yusuf A.S. (Continues) 7', src: 'http://archive.org/download/Lives/CD07.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Yusuf A.S. (Continues) 8', src: 'http://archive.org/download/Lives/CD08.mp3', img: 'anwarprophets.jpg' },
-        { title: ' Yusuf (Cont.) – Ayub – Yunus A.S. 9', src: 'http://archive.org/download/Lives/CD09.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Musa A.S. And Pharaoh 10', src: 'http://archive.org/download/Lives/CD10.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Musa A.S. And Pharaoh 2 11', src: 'http://archive.org/download/Lives/CD11.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Musa A.S. And Pharaoh 3 12', src: 'http://archive.org/download/Lives/CD12.mp3', img: 'anwarprophets.jpg' },
-        { title: ' Musa A.S. And Bani Israeel 13', src: 'http://archive.org/download/Lives/CD13.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Musa A.S. And Bani Israeel (Cont.)14', src: 'http://archive.org/download/Lives/CD14.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Musa A.S. And Bani Israeel (Cont.)15', src: 'http://archive.org/download/Lives/CD15.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Yusha And Dawood A.S. 16', src: 'http://archive.org/download/Lives/CD16.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Dawood (Cont.) – Sulaiman A.S. 17', src: 'http://archive.org/download/Lives/CD17.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Sulaiman – Kingdom Of Sheba 18', src: 'http://archive.org/download/Lives/CD18.mp3', img: 'anwarprophets.jpg' },
-        { title: 'The Family Of Imran 19', src: 'http://archive.org/download/Lives/CD19.mp3', img: 'anwarprophets.jpg' },
-        { title: 'The Family Of Imran 20', src: 'http://archive.org/download/Lives/CD20.mp3', img: 'anwarprophets.jpg' },
-        { title: 'The Family Of Imran 21', src: 'http://archive.org/download/Lives/CD21.mp3', img: 'anwarprophets.jpg' }
+        { title: '1: Story Of Creation', src: 'http://archive.org/download/Lives/CD01.mp3', img: 'anwarprophets.jpg' },
+        { title: '2: Adam To Hud ', src: 'http://archive.org/download/Lives/CD02.mp3', img: 'anwarprophets.jpg' },
+        { title: '3: Hud Saleh Ibrahim', src: 'http://archive.org/download/Lives/CD03.mp3', img: 'anwarprophets.jpg' },
+        { title: '4: Dawah,Hijra', src: 'http://archive.org/download/Lives/CD04.mp3', img: 'anwarprophets.jpg' },
+        { title: '5: Al-Kabah,Ibrahim,Lut', src: 'http://archive.org/download/Lives/CD05.mp3', img: 'anwarprophets.jpg' },
+        { title: '6: Shuaib,Yusuf', src: 'http://archive.org/download/Lives/CD06.mp3', img: 'anwarprophets.jpg' },
+        { title: '7: Yusuf ', src: 'http://archive.org/download/Lives/CD07.mp3', img: 'anwarprophets.jpg' },
+        { title: '8: Yusuf ', src: 'http://archive.org/download/Lives/CD08.mp3', img: 'anwarprophets.jpg' },
+        { title: '9: Yusuf,Ayub,Yunus', src: 'http://archive.org/download/Lives/CD09.mp3', img: 'anwarprophets.jpg' },
+        { title: '10: Musa And Pharaoh', src: 'http://archive.org/download/Lives/CD10.mp3', img: 'anwarprophets.jpg' },
+        { title: '11: Musa And Pharaoh', src: 'http://archive.org/download/Lives/CD11.mp3', img: 'anwarprophets.jpg' },
+        { title: '12: Musa And Pharaoh', src: 'http://archive.org/download/Lives/CD12.mp3', img: 'anwarprophets.jpg' },
+        { title: '13: Musa,Bani Israeel', src: 'http://archive.org/download/Lives/CD13.mp3', img: 'anwarprophets.jpg' },
+        { title: '14: Musa,Bani Israeel', src: 'http://archive.org/download/Lives/CD14.mp3', img: 'anwarprophets.jpg' },
+        { title: '15: Musa,Bani Israeel ', src: 'http://archive.org/download/Lives/CD15.mp3', img: 'anwarprophets.jpg' },
+        { title: '16: Yusha And Dawood', src: 'http://archive.org/download/Lives/CD16.mp3', img: 'anwarprophets.jpg' },
+        { title: '17: Dawood,Sulaiman', src: 'http://archive.org/download/Lives/CD17.mp3', img: 'anwarprophets.jpg' },
+        { title: '18: Sulaiman,Sheba', src: 'http://archive.org/download/Lives/CD18.mp3', img: 'anwarprophets.jpg' },
+        { title: '19: The Family Of Imran', src: 'http://archive.org/download/Lives/CD19.mp3', img: 'anwarprophets.jpg' },
+        { title: '20: The Family Of Imran', src: 'http://archive.org/download/Lives/CD20.mp3', img: 'anwarprophets.jpg' },
+        { title: '21: The Family Of Imran', src: 'http://archive.org/download/Lives/CD21.mp3', img: 'anwarprophets.jpg' }
       ],
       topic3: [
-        { title: 'Topic 3 - Audio 1', src: 'audio/topic3/audio1.mp3', img: 'images/topic3/img1.jpg' },
+      { title: '20: The Family Of Imran', src: 'http://archive.org/download/Lives/CD20.mp3', img: 'anwarprophets.jpg' },
         { title: 'Topic 3 - Audio 2', src: 'audio/topic3/audio2.mp3', img: 'images/topic3/img2.jpg' }
       ],
       topic4: [
-        { title: 'Topic 4 - Audio 1', src: 'audio/topic4/audio1.mp3', img: 'images/topic4/img1.jpg' },
+      { title: '20: The Family Of Imran', src: 'http://archive.org/download/Lives/CD20.mp3', img: 'anwarprophets.jpg' },
         { title: 'Topic 4 - Audio 2', src: 'audio/topic4/audio2.mp3', img: 'images/topic4/img2.jpg' }
       ]
     };
