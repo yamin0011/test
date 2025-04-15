@@ -15,8 +15,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
 <link href="alien" rel="icon"/>
+
 </head>
-<body><style>pre { line-height: 125%; }
+<body>
+      
+
+      <style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -92,6 +96,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 
+
 <main>
 <!-- Skip link so that screen reader users can skip narration of the navigation bar. -->
 <nav>
@@ -100,23 +105,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p>
 <a href="https://yamin0011.github.io/test/">
-<img alt="Yamin's Aql" class="mascot" height="76" src="alien"  width="80"/>
+<img alt="Yamin's Aql" class="mascot" height="76" src="alien"  width="80" />
 </a>
 </p>
-<p  class="site-name" href="https://yamin0011.github.io/test/">Yamin's Aql   <span aria-hidden="true"  class="seasonal_emoji">☕ </span>  </p>
-<em>Remember, That is The Way .</em>
+
+<p  class="site-name" href="https://yamin0011.github.io/test/">Yamin's Aql   <span aria-hidden="true"  class="seasonal_emoji">🌌 </span>  </p>
+<em style="color: white;">Remember, That is The Way .</em>
 </div>
- 
+
 <p  class="hide-on-desktop site-name-mobile" href="https://yamin0011.github.io/test/">Yamin's Aql <span aria-hidden="true" class="seasonal_emoji">☕</span></p>
 <ul>
 <li><a class="p-author" href="https://yamin0011.github.io/test/" rel="home author">Home</a></li>
 <li><a href="https://yamin0011.github.io/test/Aql Records/index.html">Aql Records</a></li>
-<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li>
+<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li> 
 <li><a href="https://yamin0011.github.io/test\Meeqat.html">Meeqat</a></li>
 <li><a href="https://yamin0011.github.io/test/Poetry/index.html">Poetry</a></li>
 <li><a href="https://yamin0011.github.io/test/Dbsmith/Dbs.html">D.B.Smith</a></li>
-<li><a href="https://yamin0011.github.io/test/about.html">About</a></li>
-<li><a aria-label="Show or hide navigation links" class="hide-on-desktop" href="#" onclick="document.querySelector('#extended_nav').classList.toggle('hide-on-mobile'); return false;">[+]</a></li>
+<li><a href="about.html">About</a></li>
+<li><a aria-label="Show or hide navigation links" style="color: #e9e4e4;"
+      class="hide-on-desktop" href="#" onclick="document.querySelector('#extended_nav').classList.toggle('hide-on-mobile'); return false;">[ ++ ]</a></li>
 <div class="hide-on-mobile" id="extended_nav">
 
 
@@ -124,45 +131,119 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><a href="https://libgen.li/index.php">Download Any Book</a></li>
 </div>
 </ul>
+
+
+</nav>
+<div id="main">
+     
+
+
+<!-- My bio is structured as a h-card, a way of representing profile information on the web.
+h-card isn't widely used, and I don't recommend adding it if you are new to the web.
+If you are interested, you can learn more about h-card at https://microformats.org/wiki/h-card.
+-->
+<div class="h-feed hfeed intro h-card p-author">
+
+<p class="p-note">Hey سلام I'm <a class="p-name u-url p-given-name" href="https://yamin0011.github.io/test/">Yamin Manzoor</a> (<a class="u-sound p-ipa" href="https://yamin0011.github.io/test/" rel="pronunciation">/yameh won/</a>) .
+       I live in <span class="p-country-name">Kashmir</span>. This is my blog.</p>
+       
+<p>I hope this website  brings joy into your day.</p>
+<!-- I hope you are having a wonderful day! -->
+<h2 style="font-family: 'Times New Roman', Times, serif; font-size: xlarger;" >Scholars</h2>
+
+
 <style>
     h3 {
         color: #000000;
         font-size: large;
     }
+
+    
+    .recent-scroll {
+  width: auto;
+  padding: 1px;
+  background-color: #fdf9f9;
+}
+
+.recent-scroll h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: cursive;
+}
+
+.recent-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 5px;
+  padding: 02px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.recent {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.recent img {
+  width: 85%; 
+  height: 165px;
+  object-fit: cover;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 3.4);
+  
+}
+
+.movie img:hover{
+    transform: scale(1.05s);
+    background-color: #0cec04;
+}
+
+.recent p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #020202;
+}
+
+.recent-container::-webkit-scrollbar {
+  height: 2px;
+}
+
+.recent-container::-webkit-scrollbar-thumb {
+  background-color: #131212;
+  border-radius: 05px;
+}
+
+.recent-container::-webkit-scrollbar-thumb:hover {
+  background-color: #faf6f6;
+}
+
+.recent-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
 </style>
 </nav>
-<div id="main">
+
     
-     
-    <section id="Seerah">
-        <section style="border-radius: 0%; border: 0px;"> <h1><a href="https://yamin0011.github.io/test/Quran/Scholars/Seerah.html#Seerah" > Seerah By Imam Anwar Al Awlaki&#8594;</a> </h1> <time class="entry-date updated" datetime="March 11, 2025">March 11, 2025</time> </section>
-        
-        <h3>The Life of Prophet Muhammad (S)  </h3>
-        <h3> Makkan Period</h3>
+   <ul>  
+    <div class="recent-container">
+        <div class="recent">
+            <a href="https://www.drisrar.com/" target="_blank">
+              <img src="imam.jfif" alt="R 2" >
+              <p>Imam Anwar Al Awlaki</p>
+            </a>
+          </div>
 
-<p>In these talks, the Imam eloquently presents the Makkan, period of the Prophet’s life in a detailed manner,
-     deriving valuable lessons from it and thus making it relevant to our modern times. 
-     This series is primarily based on Ibn Kathir’s book on the Sirah.</p>
-
-
-
-
-
-<h3>The Life of Prophet Muhammad(S) </h3>
-<H3>- Madinah Period ----- PART 1</H3>
-<p>This set of lectures covers the first five years of the Medina era which include the all important events of the Hijrah,
-     the establishment of the first Islamic State, the battle of Badr, the Battle of Uhud, and finally the battle of the Trench.</p>
-
-
-
-
-<h3>The Life of Prophet Muhammad (S)  </h3>
-<h3>Madinah Period ----- Part Two</h3>
-<p>In these talks,  Imam covers the last five years of the life of the Messenger of Allah, Muhammad (SAW) from the
-     fifth year of Hijra to the tenth. It includes the important events of the truce of Hudaybiyyah, the battle of Khaibar, the battle of Muatah, 
-    the conquest of Makkah, the battle of Hunain, the battle of Tabuk and finally the passing away of the seal of the Prophets.</p>
-   
-  </section>
+          <div class="recent">
+            <a href="https://allreligionsareone.org/book%20list/Freemasonry%20and%20the%20birth%20of%20modern%20science%20robert%20lomas.pdf" target="_blank">
+              <img src="rec-img/magic.png" alt="R 2" >
+              <p>Bilal Assad <br> live Soon</p>
+            </a>
+          </div>
+      </div>
 
 
   <footer>

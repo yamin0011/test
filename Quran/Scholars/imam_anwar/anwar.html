@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link as="style" href="anwar.css" rel="preload"/>
+<link as="font" crossorigin="" href="/assets/fonts/standard-book-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="script" href="/assets/js/seasonal.js" rel="preload"/>
+<title>Yamin's Aql</title>
+<!-- styles.css contains the CSS that styles most of this website. -->
+<link href="anwar.css" rel="stylesheet"/>
+<link href="https://news.ycombinator.com/user?id=zerojames" rel="me"/>
+<link href="https://orcid.org/0009-0006-3736-1653" rel="me"/>
+<!-- This is used to optimise my website for mobile use.
+      See https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag for more information about what the tag means. -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<link href="alien" rel="icon"/>
+
+</head>
+<body>
+      
+
+      <style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+
+
+<main>
+<!-- Skip link so that screen reader users can skip narration of the navigation bar. -->
+<nav>
+<div id="navigation_meta">
+<a class="accessibility_label" href="#main" id="skip-to-main-content-link">Skip to main content</a>
+
+<p>
+<a href="https://yamin0011.github.io/test/">
+<img alt="Yamin's Aql" class="mascot" height="76" src="alien"  width="80" />
+</a>
+</p>
+
+<p  class="site-name" href="https://yamin0011.github.io/test/">Yamin's Aql   <span aria-hidden="true"  class="seasonal_emoji">🌌 </span>  </p>
+<em style="color: rgb(0, 0, 0);">Remember, That is The Way .</em>
+</div>
+
+<p  class="hide-on-desktop site-name-mobile" href="https://yamin0011.github.io/test/">Yamin's Aql <span aria-hidden="true" class="seasonal_emoji">☕</span></p>
+<ul>
+<li><a class="p-author" href="https://yamin0011.github.io/test/" rel="home author">Home</a></li>
+<li><a href="https://yamin0011.github.io/test/Aql Records/index.html">Aql Records</a></li>
+<li><a href="https://yamin0011.github.io/test/Quran/index.html">Quran</a></li> 
+<li><a href="https://yamin0011.github.io/test\Meeqat.html">Meeqat</a></li>
+<li><a href="https://yamin0011.github.io/test/Poetry/index.html">Poetry</a></li>
+<li><a href="https://yamin0011.github.io/test/Dbsmith/Dbs.html">D.B.Smith</a></li>
+<li><a href="about.html">About</a></li>
+<li><a aria-label="Show or hide navigation links" style="color: #070707;"
+      class="hide-on-desktop" href="#" onclick="document.querySelector('#extended_nav').classList.toggle('hide-on-mobile'); return false;">[ ++ ]</a></li>
+<div class="hide-on-mobile" id="extended_nav">
+
+
+<li><a href="https://aadhibaat.org/">Wander</a></li>
+<li><a href="https://libgen.li/index.php">Download Any Book</a></li>
+</div>
+</ul>
+
+
+</nav>
+<div id="main">
+     
+
+
+<!-- My bio is structured as a h-card, a way of representing profile information on the web.
+h-card isn't widely used, and I don't recommend adding it if you are new to the web.
+If you are interested, you can learn more about h-card at https://microformats.org/wiki/h-card.
+-->
+<div class="h-feed hfeed intro h-card p-author">
+
+<p class="p-note">Hey سلام I'm <a class="p-name u-url p-given-name" href="https://yamin0011.github.io/test/">Yamin Manzoor</a> (<a class="u-sound p-ipa" href="https://yamin0011.github.io/test/" rel="pronunciation">/yameh won/</a>) .
+       I live in <span class="p-country-name">Kashmir</span>. This is my blog.</p>
+       
+<p>I hope this website  brings joy into your day.</p>
+<!-- I hope you are having a wonderful day! -->
+<h2 style="font-family: 'Times New Roman', Times, serif; font-size: xlarger;" >Audios</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imam Anwar Al Awlaki</title>
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://CDn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+
+  <style>
+    
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .player-wrapper {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .audio-cover {
+      width: 100%;
+      max-width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .topic-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.topic-btn {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+    .topic-btn:hover,
+    .topic-btn.active {
+      background-color: #013bfa;
+    }
+
+    .audio-list {
+        display: -ms-flexbox;
+      max-width: 800px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      flex-direction: column;
+    }
+
+    .audio-list li {
+        
+        color: white;
+      padding: 0.75rem 1rem;
+      margin: 0.2rem 0;
+      background: #0c0c0cc4;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .audio-list li:hover {
+      background: #0703f1;
+    }
+
+    .plyr--audio {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 8px;
+  background-color: #0111f5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.audio-item {
+    color: white;
+      background-color: #080808;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1 1 20px;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 05px;
+    }
+.audio-item.playing {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ffcc00aa;
+}
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.player-controls button {
+  background-color: #0330f8;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.player-controls button:hover {
+  background-color: #444;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <h1>🎙️Imam Anwar Al Awlaki</h1>
+
+  <!-- Cover Image + Custom Player -->
+  <div class="player-wrapper">
+    <img id="coverImage" class="audio-cover" src="imam.jfif" alt="Cover image" />
+    <audio id="mainAudioPlayer" controls></audio>
+  </div>
+  
+  
+  <!-- Topic Buttons -->
+  <div class="topic-list">
+    <button class="topic-btn" onclick="loadTopic('topic1', this)">(الآخرة) The Hereafter</button>
+    <button class="topic-btn" onclick="loadTopic('topic2', this)">The Lives Of Prophets</button>
+    <button class="topic-btn" onclick="loadTopic('topic3', this)">Topic 3</button>
+    <button class="topic-btn" onclick="loadTopic('topic4', this)">Topic 4</button>
+  </div>
+  <div class="player-controls" style="margin-top: 10px; margin-bottom: 10px;">
+    <button onclick="prevAudio()"> Previous</button>
+    <button onclick="nextAudio()"> Next</button>
+  </div>
+  <small style="text-align: center; ">Recordings Need Time To Process</small>
+  <!-- Audio List -->
+  <ul class="audio-list" id="audioList"></ul>
+
+  <!-- Plyr JS -->
+  <script src="https://CDn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+
+  <script>
+    let currentAudioList = [];
+    let currentAudioIndex = 0;
+
+    const audioData = {
+      topic1: [
+        { title: 'Introduction_-_Death', src: 'http://archive.org/download/nooor90/01_-_Introduction_-_Death.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Death', src: 'http://archive.org/download/nooor90/02_Death.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Journey_Of_The_Soul', src: 'http://archive.org/download/nooor90/03_-_Journey_Of_The_Soul.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs_Of_The_Day_01-07', src: 'http://archive.org/download/nooor90/04_-_Minor_Signs_Of_The_Day_01-07.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs_Of_The_Day 5', src: 'http://archive.org/download/nooor90/05_-_Minor_Signs_Of_The_Day_08-18.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs_Of_The_Day 6', src: 'http://archive.org/download/nooor90/06_-_Minor_Signs_Of_The_Day_19-38.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Minor_Signs_Of_The_Day 7', src: 'http://archive.org/download/nooor90/07_-_Minor_Signs_Of_The_Day_39-52.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs_1__Ad-Dajjal', src: 'http://archive.org/download/nooor90/08_-_Major_Signs_1__Ad-Dajjal.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs__1__AdDajjal_an__Isa_AS', src: 'http://archive.org/download/nooor90/09_Major_Signs__1__AdDajjal_an__Isa_AS.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Major_Signs 10', src: 'http://archive.org/download/nooor90/10_-_Major_Signs_3-10.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_Resurrection 11', src: 'http://archive.org/download/nooor90/11_-_The_Resurrection.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_Non-Believers_On_The_Day 12', src: 'http://archive.org/download/nooor90/12_-_The_Non-Believers_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Punishment_For_Sins_-_Righteous_On_The_Day 13', src: 'http://archive.org/download/nooor90/13_-_Punishment_For_Sins_-_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Righteous_On_The_Day 14', src: 'http://archive.org/download/nooor90/14_Righteous_On_The_Day.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Names_And_Rules_Of_The_Hereafter 15', src: 'http://archive.org/download/nooor90/15_-_Names_And_Rules_Of_The_Hereafter.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Accountability 16', src: 'http://archive.org/download/nooor90/16_-_Accountability.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Hellfire_And_Its_Life 17', src: 'http://archive.org/download/nooor90/17_-_Hellfire_And_Its_Life.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Some_Actions_That_Lead_To_Hellfire 18', src: 'http://archive.org/download/nooor90/18_-_Some_Actions_That_Lead_To_Hellfire.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Ratio_Of_People_In_Hellfire_Compared_To_Paradise 19', src: 'http://archive.org/download/nooor90/19_-_Ratio_Of_People_In_Hellfire_Compared_To_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'A_Tour_Of_Paradise 20', src: 'http://archive.org/download/nooor90/20_A_Tour_Of_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'Socialization_In_Paradise 21', src: 'http://archive.org/download/nooor90/21_-_Socialization_In_Paradise.mp3', img: 'anwarhereafter.jpg' },
+        { title: 'The_People_Of_Paradise 22', src: 'http://archive.org/download/nooor90/22_-_The_People_Of_Paradise.mp3', img: 'anwarhereafter.jpg' }
+
+        
+      ],
+      topic2: [
+        { title: ' Introduction – Story Of Creation 1', src: 'http://archive.org/download/Lives/CD01.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Adam (Cont.) – Idris – Sheeth – Hud 2', src: 'http://archive.org/download/Lives/CD02.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Hud (cont.) – Saleh – Ibrahim 3', src: 'http://archive.org/download/Lives/CD03.mp3', img: 'anwarprophets.jpg' },
+        { title: 'The Dawah Of Ibrahim/Hijra Of Ibrahim 4', src: 'http://archive.org/download/Lives/CD04.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Al-Kabah – Virtues Of Ibrahim – Lut 5', src: 'http://archive.org/download/Lives/CD05.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Shuaib – Yusuf 6', src: 'http://archive.org/download/Lives/CD06.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Yusuf A.S. (Continues) 7', src: 'http://archive.org/download/Lives/CD07.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Yusuf A.S. (Continues) 8', src: 'http://archive.org/download/Lives/CD08.mp3', img: 'anwarprophets.jpg' },
+        { title: ' Yusuf (Cont.) – Ayub – Yunus A.S. 9', src: 'http://archive.org/download/Lives/CD09.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Musa A.S. And Pharaoh 10', src: 'http://archive.org/download/Lives/CD10.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Musa A.S. And Pharaoh 2 11', src: 'http://archive.org/download/Lives/CD11.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Musa A.S. And Pharaoh 3 12', src: 'http://archive.org/download/Lives/CD12.mp3', img: 'anwarprophets.jpg' },
+        { title: ' Musa A.S. And Bani Israeel 13', src: 'http://archive.org/download/Lives/CD13.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Musa A.S. And Bani Israeel (Cont.)14', src: 'http://archive.org/download/Lives/CD14.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Musa A.S. And Bani Israeel (Cont.)15', src: 'http://archive.org/download/Lives/CD15.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Yusha And Dawood A.S. 16', src: 'http://archive.org/download/Lives/CD16.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Dawood (Cont.) – Sulaiman A.S. 17', src: 'http://archive.org/download/Lives/CD17.mp3', img: 'anwarprophets.jpg' },
+        { title: 'Sulaiman – Kingdom Of Sheba 18', src: 'http://archive.org/download/Lives/CD18.mp3', img: 'anwarprophets.jpg' },
+        { title: 'The Family Of Imran 19', src: 'http://archive.org/download/Lives/CD19.mp3', img: 'anwarprophets.jpg' },
+        { title: 'The Family Of Imran 20', src: 'http://archive.org/download/Lives/CD20.mp3', img: 'anwarprophets.jpg' },
+        { title: 'The Family Of Imran 21', src: 'http://archive.org/download/Lives/CD21.mp3', img: 'anwarprophets.jpg' }
+      ],
+      topic3: [
+        { title: 'Topic 3 - Audio 1', src: 'audio/topic3/audio1.mp3', img: 'images/topic3/img1.jpg' },
+        { title: 'Topic 3 - Audio 2', src: 'audio/topic3/audio2.mp3', img: 'images/topic3/img2.jpg' }
+      ],
+      topic4: [
+        { title: 'Topic 4 - Audio 1', src: 'audio/topic4/audio1.mp3', img: 'images/topic4/img1.jpg' },
+        { title: 'Topic 4 - Audio 2', src: 'audio/topic4/audio2.mp3', img: 'images/topic4/img2.jpg' }
+      ]
+    };
+
+    const player = new Plyr('#mainAudioPlayer', {
+      controls: [
+        'play', 'rewind','progress', 'current-time', 'duration', 
+        'mute',  'settings',  'fastforward'
+      ],
+      settings: ['speed', 'loop'],
+    });
+
+    const audio = document.getElementById('mainAudioPlayer');
+    const cover = document.getElementById('coverImage');
+
+    function loadTopic(topicKey, btn) {
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const list = document.getElementById('audioList');
+  list.innerHTML = '';
+
+  currentAudioList = audioData[topicKey];
+
+  currentAudioList.forEach((audioItem, index) => {
+    const div = document.createElement('div');
+    div.className = 'audio-item';
+    div.innerHTML = `<div class="audio-item-title">${audioItem.title}</div>`;
+    div.onclick = () => {
+      currentAudioIndex = index;
+      playAudio(audioItem.src, audioItem.img, div);
+    };
+    list.appendChild(div);
+  });
+
+  if (currentAudioList.length > 0) {
+    currentAudioIndex = 0;
+    playAudio(currentAudioList[0].src, currentAudioList[0].img,
+              document.querySelectorAll('.audio-item')[0]);
+  }
+}
+function nextAudio() {
+  if (currentAudioIndex < currentAudioList.length - 1) {
+    currentAudioIndex++;
+    const next = currentAudioList[currentAudioIndex];
+    const el = document.querySelectorAll('.audio-item')[currentAudioIndex];
+    playAudio(next.src, next.img, el);
+  }
+}
+
+function prevAudio() {
+  if (currentAudioIndex > 0) {
+    currentAudioIndex--;
+    const prev = currentAudioList[currentAudioIndex];
+    const el = document.querySelectorAll('.audio-item')[currentAudioIndex];
+    playAudio(prev.src, prev.img, el);
+  }
+}
+
+player.on('ended', () => {
+  nextAudio(); // auto go to next
+});
+
+
+    function playAudio(src, img, clickedElement = null) {
+  audio.src = src;
+  cover.src = img;
+
+  player.source = {
+    type: 'audio',
+    sources: [{ src: src, type: 'audio/mp3' }]
+  };
+  player.play();
+
+  // Remove "playing" class from all audio items
+  document.querySelectorAll('.audio-item').forEach(item => {
+    item.classList.remove('playing');
+  });
+
+  // Add "playing" class to the clicked element (if passed)
+  if (clickedElement) {
+    clickedElement.classList.add('playing');
+  }
+}
+
+
+
+
+  </script>
+
+</body>
+</html>
