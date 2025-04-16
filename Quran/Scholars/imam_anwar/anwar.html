@@ -269,6 +269,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
   display: flex;
   justify-content: space-between;
   max-width: 600px;
+  max-height: fit-content;
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -411,8 +412,8 @@ If you are interested, you can learn more about h-card at https://microformats.o
       { title: '11: Plague', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/11__the_famine__the_plague.mp3', img: 'umar.gif' },
       { title: '12: Governors', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/12__ummar_with_his_governors.mp3', img: 'umar.gif' },
       { title: '13: Generals', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/13__ummar_with_his_army_generals.mp3', img: 'umar.gif' },
-      { title: '14: Persian Empire', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/14_-_The_Opening_Of_The_Persian_Empire.mp3', img: 'umar.gif' },
-      { title: '15: Persian Empireeee', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/15_-_The_Opening_Of_The_Persian_Empire.mp3', img: 'umar.gif' },
+      { title: '14: Persian Empire', src: 'http://archive.org/download/noo0or12/14_-_The_Opening_Of_The_Persian_Empire.mp3', img: 'umar.gif' },
+      { title: '15: Persian Empireeee', src: 'https://archive.org/download/noo0or12/15_-_The_Opening_Of_The_Persian_Empire.mp3', img: 'umar.gif' },
       { title: '16: Roman Front', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/16__the_roman_front.mp3', img: 'umar.gif' },
       { title: '17: Dreams', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/17__comments__dreams.mp3', img: 'umar.gif' },
       { title: '18: His Last Days', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/18__his_last_days.mp3', img: 'umar.gif' }
@@ -433,8 +434,8 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
     const player = new Plyr('#mainAudioPlayer', {
       controls: [
-        'play', 'rewind','progress', 'current-time', 'duration', 
-        'mute',  'settings',  'fastforward'
+        'play', 'progress', 'current-time', 'duration', 
+        'mute', 'rewind', 'settings'
       ],
       settings: ['speed', 'loop'],
     });
