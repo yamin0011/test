@@ -271,7 +271,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
 .player-controls {
   display: flex;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 300px;
   
   margin: 0 auto;
   padding-top: 10px;
@@ -317,8 +317,9 @@ If you are interested, you can learn more about h-card at https://microformats.o
     <button class="topic-btn" onclick="loadTopic('topic5', this)">05: Dream Interpretations</button>
     <button class="topic-btn" onclick="loadTopic('topic6', this)">06: Glad Tidings</button>
     <button class="topic-btn" onclick="loadTopic('topic7', this)">07: Companions Of The Ditch</button>
-    <button class="topic-btn" onclick="loadTopic('topic7', this)">08: Lessons From The Life Of Musa</button>
-    <button class="topic-btn" onclick="loadTopic('topic7', this)">09: Companions Of The Ditch</button>
+    <button class="topic-btn" onclick="loadTopic('topic8', this)">08: Lessons From The Life Of Musa</button>
+    <button class="topic-btn" onclick="loadTopic('topic9', this)">09: Stories From Hadith</button>
+    <button class="topic-btn" onclick="loadTopic('topic10', this)">09: Extra's</button>
   </div>
   <div class="player-controls" style="margin-top: 10px; margin-bottom: 10px; font-family: sans-serif;">
     <button onclick="prevAudio()"> Previous</button>
@@ -439,39 +440,50 @@ If you are interested, you can learn more about h-card at https://microformats.o
       { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
       ],
       topic7: [
-      { title: '01: Part I', src: 'http://archive.org/download/Companions_of_the_Ditch/01_Companions_of_the_Ditch_Track_01.mp3', img: 'ditch1.jpg' },
-      { title: '02: Part II', src: 'http://archive.org/download/Companions_of_the_Ditch/02_Companions_of_the_Ditch_Track_02.mp3', img: 'ditch1.jpg' },
-      { title: '03: Part III', src: 'http://archive.org/download/Companions_of_the_Ditch/03_Companions_of_the_Ditch_Track_03.mp3', img: 'ditch1.jpg' },
-      { title: '04: Part IV', src: 'http://archive.org/download/Companions_of_the_Ditch/04_Companions_of_the_Ditch_Track_04.mp3', img: 'ditch1.jpg' },
-      { title: '05: Part  V', src: 'http://archive.org/download/Companions_of_the_Ditch/05_Companions_of_the_Ditch_Track_05.mp3', img: 'ditch1.jpg' },
-      { title: '06: Part VI', src: 'http://archive.org/download/Companions_of_the_Ditch/06_Companions_of_the_Ditch_Track_06.mp3', img: 'ditch1.jpg' },
-      { title: '07: Part VII', src: 'http://archive.org/download/Companions_of_the_Ditch/07_Companions_of_the_Ditch_Track_07.mp3', img: 'ditch1.jpg' },
-      { title: '08: Part VIII ', src: 'http://archive.org/download/Companions_of_the_Ditch/08_Companions_of_the_Ditch_Track_08.mp3', img: 'ditch1.jpg' }
+      { title: '01: Lec I', src: 'http://archive.org/download/Companions_of_the_Ditch/01_Companions_of_the_Ditch_Track_01.mp3', img: 'ditch1.jpg' },
+      { title: '02: Lec II', src: 'http://archive.org/download/Companions_of_the_Ditch/02_Companions_of_the_Ditch_Track_02.mp3', img: 'ditch1.jpg' },
+      { title: '03: Lec III', src: 'http://archive.org/download/Companions_of_the_Ditch/03_Companions_of_the_Ditch_Track_03.mp3', img: 'ditch1.jpg' },
+      { title: '04: Lec IV', src: 'http://archive.org/download/Companions_of_the_Ditch/04_Companions_of_the_Ditch_Track_04.mp3', img: 'ditch1.jpg' },
+      { title: '05: Lec  V', src: 'http://archive.org/download/Companions_of_the_Ditch/05_Companions_of_the_Ditch_Track_05.mp3', img: 'ditch1.jpg' },
+      { title: '06: Lec VI', src: 'http://archive.org/download/Companions_of_the_Ditch/06_Companions_of_the_Ditch_Track_06.mp3', img: 'ditch1.jpg' },
+      { title: '07: Lec VII', src: 'http://archive.org/download/Companions_of_the_Ditch/07_Companions_of_the_Ditch_Track_07.mp3', img: 'ditch1.jpg' },
+      { title: '08: Lec VIII ', src: 'http://archive.org/download/Companions_of_the_Ditch/08_Companions_of_the_Ditch_Track_08.mp3', img: 'ditch1.jpg' }
       ],
       topic8: [
-      { title: '01: Part I', src: 'http://archive.org/download/Glad.Tidings/01.mp3', img: 'glad.gif' },
-      { title: '02: Part II', src: 'http://archive.org/download/Glad.Tidings/02.mp3', img: 'glad.gif' },
-      { title: '03: Part III', src: 'http://archive.org/download/Glad.Tidings/03.mp3', img: 'glad.gif' },
-      { title: '04: Part IV', src: 'http://archive.org/download/Glad.Tidings/04.mp3', img: 'glad.gif' },
-      { title: '05: Part  V', src: 'http://archive.org/download/Glad.Tidings/05.mp3', img: 'glad.gif' },
-      { title: '06: Part VI', src: 'http://archive.org/download/Glad.Tidings/06.mp3', img: 'glad.gif' },
-      { title: '07: Part VII', src: 'http://archive.org/download/Glad.Tidings/07.mp3', img: 'glad.gif' },
-      { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
+      { title: '01: Part I', src: 'http://archive.org/download/Life.of.Musa/01_Lessons.mp3', img: 'lessons.png' },
+      { title: '02: Part II', src: 'http://archive.org/download/Life.of.Musa/02_Lessons', img: 'lessons.png' },
+      { title: '03: Part III', src: 'http://archive.org/download/Life.of.Musa/03_Lessons', img: 'lessons.png' },
+      { title: '04: Part IV', src: 'http://archive.org/download/Life.of.Musa/04_Lessons', img: 'lessons.png' },
+      { title: '05: Part  V', src: 'http://archive.org/download/Life.of.Musa/05_Lessons', img: 'lessons.png' },
+      { title: '06: Part VI', src: 'http://archive.org/download/Life.of.Musa/06_Lessons', img: 'lessons.png' },
+      { title: '07: Part VII', src: 'http://archive.org/download/Life.of.Musa/07_Lessons', img: 'lessons.png' }
+      
       ],
       topic9: [
-      { title: '01: Part I', src: 'http://archive.org/download/Glad.Tidings/01.mp3', img: 'glad.gif' },
-      { title: '02: Part II', src: 'http://archive.org/download/Glad.Tidings/02.mp3', img: 'glad.gif' },
-      { title: '03: Part III', src: 'http://archive.org/download/Glad.Tidings/03.mp3', img: 'glad.gif' },
-      { title: '04: Part IV', src: 'http://archive.org/download/Glad.Tidings/04.mp3', img: 'glad.gif' },
-      { title: '05: Part  V', src: 'http://archive.org/download/Glad.Tidings/05.mp3', img: 'glad.gif' },
-      { title: '06: Part VI', src: 'http://archive.org/download/Glad.Tidings/06.mp3', img: 'glad.gif' },
-      { title: '07: Part VII', src: 'http://archive.org/download/Glad.Tidings/07.mp3', img: 'glad.gif' },
-      { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
+      { title: '01: Track I', src: 'http://archive.org/download/StoriesFromHadith/01Track1.mp3', img: 'hadees.png' },
+      { title: '02: Track II', src: 'http://archive.org/download/StoriesFromHadith/02Track2.mp3', img: 'hadees.png' },
+      { title: '03: Track III', src: 'http://archive.org/download/StoriesFromHadith/03Track3.mp3', img: 'hadees.png' },
+      { title: '04: Track IV', src: 'http://archive.org/download/StoriesFromHadith/04Track4.mp3', img: 'hadees.png' }
+      
+      
       ],
+
       topic10: [
-      { title: '13: The Family Of Imran', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Topic 4 - Audio 2', src: 'audio/topic4/audio2.mp3', img: 'images/topic4/img2.jpg' }
+      { title: '01: Story Of Bull', src: 'http://archive.org/download/The.Bull/The.Story.of.The.Bull.mp3', img: 'bull.gif' },
+      { title: '02: State Of Ummah', src: 'https://archive.org/download/AnwarAlAwlakiShortTalks/State_of_the_Ummah.mp3', img: 'anwarstateoftheummah.gif' },
+      { title: '03: Dust', src: 'https://archive.org/download/DustDwn/Dust.mp3', img: 'dust.gif' },
+      { title: '04: Battle Between Hearts And Minds', src: 'https://archive.org/download/Qfdrt32/Battle.of.The.Hearts.and.Minds.mp3', img: 'heartsminds.gif' },
+      { title: '05: Victory 1', src: 'http://archive.org/download/Victo/VictoryPart01.mp3', img: 'victory.gif' },
+      { title: '06: Victory 2', src: 'http://archive.org/download/Victo/VictoryPart02.mp3', img: 'victory.gif' },
+      { title: '07: Know Quran', src: 'http://archive.org/download/Undrstnd_Quran/Understanding_Quran.mp3', img: 'understanding.jpg' },
+      { title: '08: 25 Promises-I ', src: 'http://archive.org/download/25.Promises/Track.01.mp3', img: 'promises.jpg' },
+      { title: '08: 25 Promises-II ', src: 'http://archive.org/download/25.Promises/Track.02.mp3', img: 'promises.jpg' },
+      { title: '08: Hijrah ', src: 'http://archive.org/download/Hijraah/Hijrah.mp3', img: 'hijrah2.jpg' }
+      
+      
+
       ]
+      
     };
 
     const player = new Plyr('#mainAudioPlayer', {
@@ -561,4 +573,9 @@ player.on('ended', () => {
   </script>
 
 </body>
+<a href="https://kalamullah.com/lectures.html" style="text-align: right; color: rgb(0, 0, 0);">Source</a>
+<small>The Recordings Are Stored On Internet Archives(Records Can't Be Banned ). They Need Time  To Process</small>
+<footer>
+  <p>&copy; 2025 Yamin's Aql</p>
+</footer>
 </html>
