@@ -186,6 +186,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
     .topic-list {
   display: flex;
   overflow-x: auto;
+  font-size: small;
   gap: 1rem;
   padding: 1rem;
   scroll-snap-type: x mandatory;
@@ -195,17 +196,17 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
 .topic-btn {
   flex: 0 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: #f8f2f2;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
   font-size: small;
   border: none;
-  border-radius: 6px;
+  border-radius: 3px;
   color: rgb(2, 2, 2);
   cursor: pointer;
   white-space: nowrap;
   scroll-snap-align: start;
-  font-size: 1rem;
+  
   transition: background-color 0.3s;
 }
 
@@ -220,12 +221,13 @@ If you are interested, you can learn more about h-card at https://microformats.o
   gap: 1rem;
   font-size: small;
   
+  
     }
 
     .audio-list li {
         
         color: white;
-      
+        padding: 0.5rem 0.5rem;
       margin: 0.1rem 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 3.4);
       background: #f5f3f3c4;
@@ -241,6 +243,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
     .plyr--audio {
   width: 100%;
   max-width: 600px;
+  
   margin: 0 auto;
   height: auto;
   border-radius: 1px;
@@ -269,7 +272,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
   display: flex;
   justify-content: space-between;
   max-width: 600px;
-  max-height: fit-content;
+  
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -305,13 +308,13 @@ If you are interested, you can learn more about h-card at https://microformats.o
   
   <p style="text-align: center; margin-bottom: 1px; font-family: 'Times New Roman', Times, serif;">Works Of Imam Anwar Al Awlaki</p>
   <!-- Topic Buttons -->
-  <div class="topic-list">
+  <div class="topic-list" style="font-size: small;">
     
     <button class="topic-btn" onclick="loadTopic('topic1', this)">End Times | Hereafter</button>
     <button class="topic-btn" onclick="loadTopic('topic2', this)">The Lives Of Prophets</button>
     <button class="topic-btn" onclick="loadTopic('topic3', this)">Abu Bakr al Siddiq</button>
     <button class="topic-btn" onclick="loadTopic('topic4', this)">Ummar Ibn al Khataab</button>
-    <button class="topic-btn" onclick="loadTopic('topic5', this)">Topic 4</button>
+    <button class="topic-btn" onclick="loadTopic('topic5', this)">Dream Interpretations</button>
     <button class="topic-btn" onclick="loadTopic('topic6', this)">Topic 4</button>
     <button class="topic-btn" onclick="loadTopic('topic7', this)">Topic 4</button>
   </div>
@@ -381,7 +384,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
         { title: '21: The Family Of Imran', src: 'http://archive.org/download/Lives/CD21.mp3', img: 'anwarprophets.jpg' }
       ],
       topic3: [
-      { title: '13: Introduction', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'abubakr.gif' },
+      { title: '01: Introduction', src: 'http://archive.org/download/Abu_Bakr_Full/01__introduction.mp3', img: 'abubakr.gif' },
       { title: '02: Embracing_islam', src: 'http://archive.org/download/Abu_Bakr_Full/02__his_family__embracing_islam.mp3', img: 'abubakr.gif' },
       { title: '03: Hijrah', src: 'http://archive.org/download/Abu_Bakr_Full/03__hijrah.mp3', img: 'abubakr.gif' },
       { title: '04: Jihad', src: 'http://archive.org/download/Abu_Bakr_Full/04__jihad_with_the_messenger_of_allah.mp3', img: 'abubakr.gif' },
@@ -419,8 +422,9 @@ If you are interested, you can learn more about h-card at https://microformats.o
       { title: '18: His Last Days', src: 'http://archive.org/download/Umar_Ibn_Khattab_Full/18__his_last_days.mp3', img: 'umar.gif' }
       ],
       topic5: [
-      { title: '13: The Family Of Imran', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Topic 3 - Audio 2', src: 'audio/topic3/audio2.mp3', img: 'images/topic3/img2.jpg' }
+      { title: '01: Dreams', src: 'https://archive.org/download/Dream.Intrprtatns/Dreams.and.Dream.Interpretations-03.mp3', img: 'anwardreams.jpg' },
+      { title: '02: Dreams', src: 'https://archive.org/download/Dream.Intrprtatns/Dreams.and.Dream.Interpretations-01.mp3', img: 'anwardreams.jpg' },
+        { title: ' 03:Dreams ', src: 'https://archive.org/download/Dream.Intrprtatns/Dreams.and.Dream.Interpretations-02.mp3', img: 'anwardreams.jpg' }
       ],
       topic6: [
       { title: '13: The Family Of Imran', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'anwarprophets.jpg' },
