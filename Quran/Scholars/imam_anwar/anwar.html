@@ -298,7 +298,7 @@ If you are interested, you can learn more about h-card at https://microformats.o
 
 <body>
 
-  <h1><a href="https://yamin0131.github.io/test/Quran/Scholars/Seerah.html" >🎙️ Anwar Al Awlaki</a></h1>
+  <h1><a href="https://yamin0131.github.io/test/Quran/Scholars/Seerah.html"  >🎙️ Anwar Al Awlaki&#10138;</a></h1>
 
   <!-- Cover Image + Custom Player -->
   <div class="player-wrapper">
@@ -310,19 +310,21 @@ If you are interested, you can learn more about h-card at https://microformats.o
   <!-- Topic Buttons -->
   <div class="topic-list" style="font-size: small;">
     
-    <button class="topic-btn" onclick="loadTopic('topic1', this)">End Times | Hereafter</button>
-    <button class="topic-btn" onclick="loadTopic('topic2', this)">The Lives Of Prophets</button>
-    <button class="topic-btn" onclick="loadTopic('topic3', this)">Abu Bakr al Siddiq</button>
-    <button class="topic-btn" onclick="loadTopic('topic4', this)">Ummar Ibn al Khataab</button>
-    <button class="topic-btn" onclick="loadTopic('topic5', this)">Dream Interpretations</button>
-    <button class="topic-btn" onclick="loadTopic('topic6', this)">Topic 4</button>
-    <button class="topic-btn" onclick="loadTopic('topic7', this)">Topic 4</button>
+    <button class="topic-btn" onclick="loadTopic('topic1', this)">01: End Times | Hereafter</button>
+    <button class="topic-btn" onclick="loadTopic('topic2', this)">02: The Lives Of Prophets</button>
+    <button class="topic-btn" onclick="loadTopic('topic3', this)">03: Abu Bakr al Siddiq</button>
+    <button class="topic-btn" onclick="loadTopic('topic4', this)">04: Ummar Ibn al Khataab</button>
+    <button class="topic-btn" onclick="loadTopic('topic5', this)">05: Dream Interpretations</button>
+    <button class="topic-btn" onclick="loadTopic('topic6', this)">06: Glad Tidings</button>
+    <button class="topic-btn" onclick="loadTopic('topic7', this)">07: Companions Of The Ditch</button>
+    <button class="topic-btn" onclick="loadTopic('topic7', this)">08: Lessons From The Life Of Musa</button>
+    <button class="topic-btn" onclick="loadTopic('topic7', this)">09: Companions Of The Ditch</button>
   </div>
-  <div class="player-controls" style="margin-top: 10px; margin-bottom: 10px;">
+  <div class="player-controls" style="margin-top: 10px; margin-bottom: 10px; font-family: sans-serif;">
     <button onclick="prevAudio()"> Previous</button>
     <button onclick="nextAudio()"> Next</button>
   </div>
-  <small style="text-align: center; ">Recordings Need Time To Process</small>
+  <p style="text-align: center; font-size: small; margin-top: 2px; ">Recordings Need Time To Process</p>
   <!-- Audio List -->
   <ul class="audio-list" id="audioList"></ul>
 
@@ -427,10 +429,46 @@ If you are interested, you can learn more about h-card at https://microformats.o
         { title: ' 03:Dreams ', src: 'https://archive.org/download/Dream.Intrprtatns/Dreams.and.Dream.Interpretations-02.mp3', img: 'anwardreams.jpg' }
       ],
       topic6: [
-      { title: '13: The Family Of Imran', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'anwarprophets.jpg' },
-        { title: 'Topic 3 - Audio 2', src: 'audio/topic3/audio2.mp3', img: 'images/topic3/img2.jpg' }
+      { title: '01: Part I', src: 'http://archive.org/download/Glad.Tidings/01.mp3', img: 'glad.gif' },
+      { title: '02: Part II', src: 'http://archive.org/download/Glad.Tidings/02.mp3', img: 'glad.gif' },
+      { title: '03: Part III', src: 'http://archive.org/download/Glad.Tidings/03.mp3', img: 'glad.gif' },
+      { title: '04: Part IV', src: 'http://archive.org/download/Glad.Tidings/04.mp3', img: 'glad.gif' },
+      { title: '05: Part  V', src: 'http://archive.org/download/Glad.Tidings/05.mp3', img: 'glad.gif' },
+      { title: '06: Part VI', src: 'http://archive.org/download/Glad.Tidings/06.mp3', img: 'glad.gif' },
+      { title: '07: Part VII', src: 'http://archive.org/download/Glad.Tidings/07.mp3', img: 'glad.gif' },
+      { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
       ],
       topic7: [
+      { title: '01: Part I', src: 'http://archive.org/download/Companions_of_the_Ditch/01_Companions_of_the_Ditch_Track_01.mp3', img: 'ditch1.jpg' },
+      { title: '02: Part II', src: 'http://archive.org/download/Companions_of_the_Ditch/02_Companions_of_the_Ditch_Track_02.mp3', img: 'ditch1.jpg' },
+      { title: '03: Part III', src: 'http://archive.org/download/Companions_of_the_Ditch/03_Companions_of_the_Ditch_Track_03.mp3', img: 'ditch1.jpg' },
+      { title: '04: Part IV', src: 'http://archive.org/download/Companions_of_the_Ditch/04_Companions_of_the_Ditch_Track_04.mp3', img: 'ditch1.jpg' },
+      { title: '05: Part  V', src: 'http://archive.org/download/Companions_of_the_Ditch/05_Companions_of_the_Ditch_Track_05.mp3', img: 'ditch1.jpg' },
+      { title: '06: Part VI', src: 'http://archive.org/download/Companions_of_the_Ditch/06_Companions_of_the_Ditch_Track_06.mp3', img: 'ditch1.jpg' },
+      { title: '07: Part VII', src: 'http://archive.org/download/Companions_of_the_Ditch/07_Companions_of_the_Ditch_Track_07.mp3', img: 'ditch1.jpg' },
+      { title: '08: Part VIII ', src: 'http://archive.org/download/Companions_of_the_Ditch/08_Companions_of_the_Ditch_Track_08.mp3', img: 'ditch1.jpg' }
+      ],
+      topic8: [
+      { title: '01: Part I', src: 'http://archive.org/download/Glad.Tidings/01.mp3', img: 'glad.gif' },
+      { title: '02: Part II', src: 'http://archive.org/download/Glad.Tidings/02.mp3', img: 'glad.gif' },
+      { title: '03: Part III', src: 'http://archive.org/download/Glad.Tidings/03.mp3', img: 'glad.gif' },
+      { title: '04: Part IV', src: 'http://archive.org/download/Glad.Tidings/04.mp3', img: 'glad.gif' },
+      { title: '05: Part  V', src: 'http://archive.org/download/Glad.Tidings/05.mp3', img: 'glad.gif' },
+      { title: '06: Part VI', src: 'http://archive.org/download/Glad.Tidings/06.mp3', img: 'glad.gif' },
+      { title: '07: Part VII', src: 'http://archive.org/download/Glad.Tidings/07.mp3', img: 'glad.gif' },
+      { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
+      ],
+      topic9: [
+      { title: '01: Part I', src: 'http://archive.org/download/Glad.Tidings/01.mp3', img: 'glad.gif' },
+      { title: '02: Part II', src: 'http://archive.org/download/Glad.Tidings/02.mp3', img: 'glad.gif' },
+      { title: '03: Part III', src: 'http://archive.org/download/Glad.Tidings/03.mp3', img: 'glad.gif' },
+      { title: '04: Part IV', src: 'http://archive.org/download/Glad.Tidings/04.mp3', img: 'glad.gif' },
+      { title: '05: Part  V', src: 'http://archive.org/download/Glad.Tidings/05.mp3', img: 'glad.gif' },
+      { title: '06: Part VI', src: 'http://archive.org/download/Glad.Tidings/06.mp3', img: 'glad.gif' },
+      { title: '07: Part VII', src: 'http://archive.org/download/Glad.Tidings/07.mp3', img: 'glad.gif' },
+      { title: '08: Part VIII ', src: 'http://archive.org/download/Glad.Tidings/08.mp3', img: 'glad.gif' }
+      ],
+      topic10: [
       { title: '13: The Family Of Imran', src: 'http://archive.org/download/Abu_Bakr_Full/13__introduction.mp3', img: 'anwarprophets.jpg' },
         { title: 'Topic 4 - Audio 2', src: 'audio/topic4/audio2.mp3', img: 'images/topic4/img2.jpg' }
       ]
