@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>MeeM</title>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <script src="https://unpkg.com/wavesurfer.js"></script>
   <style>
     body {
@@ -311,37 +310,54 @@ function enableCropInteraction(i) {
   const crop = document.getElementById(`crop-area-${i}`);
   const seg = segments[i];
   
-  // Drag crop box
+  // Drag crop box (Mouse & Touch support)
+  const onMove = (e) => {
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    const dx = clientX - startX;
+    const dy = clientY - startY;
+    startX = clientX;
+    startY = clientY;
+
+    seg.cropLeft += dx;
+    seg.cropTop += dy;
+    crop.style.left = seg.cropLeft + 'px';
+    crop.style.top = seg.cropTop + 'px';
+  };
+
+  const onEnd = () => {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onEnd);
+    document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onEnd);
+  };
+
   crop.addEventListener('mousedown', (e) => {
     if (e.target.classList.contains('resize-handle')) return;
     let startX = e.clientX, startY = e.clientY;
-    const move = (e) => {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
-      startX = e.clientX;
-      startY = e.clientY;
-      seg.cropLeft += dx;
-      seg.cropTop += dy;
-      crop.style.left = seg.cropLeft + 'px';
-      crop.style.top = seg.cropTop + 'px';
-    };
-    const up = () => {
-      document.removeEventListener('mousemove', move);
-      document.removeEventListener('mouseup', up);
-    };
-    document.addEventListener('mousemove', move);
-    document.addEventListener('mouseup', up);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
   });
 
-  // Resizing the crop box
+  crop.addEventListener('touchstart', (e) => {
+    if (e.target.classList.contains('resize-handle')) return;
+    let startX = e.touches[0].clientX, startY = e.touches[0].clientY;
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
+  });
+
+  // Resizing the crop box (Mouse & Touch support)
   const resizeHandles = crop.querySelectorAll('.resize-handle');
   resizeHandles.forEach(handle => {
     handle.addEventListener('mousedown', (e) => {
       const handleType = e.target.classList[1];
       let startX = e.clientX, startY = e.clientY;
       const move = (e) => {
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        const dx = clientX - startX;
+        const dy = clientY - startY;
 
         if (handleType === 'resize-tl') {
           seg.cropWidth -= dx;
@@ -365,20 +381,24 @@ function enableCropInteraction(i) {
         crop.style.height = seg.cropHeight + 'px';
         crop.style.left = seg.cropLeft + 'px';
         crop.style.top = seg.cropTop + 'px';
-        
-        startX = e.clientX;
-        startY = e.clientY;
+        startX = clientX;
+        startY = clientY;
       };
-      const up = () => {
+
+      const end = () => {
         document.removeEventListener('mousemove', move);
-        document.removeEventListener('mouseup', up);
+        document.removeEventListener('mouseup', end);
+        document.removeEventListener('touchmove', move);
+        document.removeEventListener('touchend', end);
       };
+
       document.addEventListener('mousemove', move);
-      document.addEventListener('mouseup', up);
+      document.addEventListener('mouseup', end);
+      document.addEventListener('touchmove', move);
+      document.addEventListener('touchend', end);
     });
   });
 }
 </script>
-
 </body>
 </html>
