@@ -310,96 +310,100 @@ function cropImage(i) {
 function enableCropInteraction(i) {
   const crop = document.getElementById(`crop-area-${i}`);
   const seg = segments[i];
-  
-  // Drag crop box (Mouse & Touch support)
-  const onMove = (e) => {
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    const dx = clientX - startX;
-    const dy = clientY - startY;
-    startX = clientX;
-    startY = clientY;
 
-    seg.cropLeft += dx;
-    seg.cropTop += dy;
-    crop.style.left = seg.cropLeft + 'px';
-    crop.style.top = seg.cropTop + 'px';
+  function getClientCoords(e) {
+    if (e.touches) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    } else {
+      return { x: e.clientX, y: e.clientY };
+    }
+  }
+
+  // Drag crop box
+  const startDrag = (e) => {
+    if (e.target.classList.contains('resize-handle')) return;
+
+    let { x: startX, y: startY } = getClientCoords(e);
+    const move = (e) => {
+      const { x, y } = getClientCoords(e);
+      const dx = x - startX;
+      const dy = y - startY;
+      startX = x;
+      startY = y;
+      seg.cropLeft += dx;
+      seg.cropTop += dy;
+      crop.style.left = seg.cropLeft + 'px';
+      crop.style.top = seg.cropTop + 'px';
+    };
+    const stop = () => {
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseup', stop);
+      document.removeEventListener('touchmove', move);
+      document.removeEventListener('touchend', stop);
+    };
+
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', stop);
+    document.addEventListener('touchmove', move);
+    document.addEventListener('touchend', stop);
   };
 
-  const onEnd = () => {
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onEnd);
-    document.removeEventListener('touchmove', onMove);
-    document.removeEventListener('touchend', onEnd);
-  };
+  crop.addEventListener('mousedown', startDrag);
+  crop.addEventListener('touchstart', startDrag);
 
-  crop.addEventListener('mousedown', (e) => {
-    if (e.target.classList.contains('resize-handle')) return;
-    let startX = e.clientX, startY = e.clientY;
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onEnd);
-  });
+  // Resize handles
+  crop.querySelectorAll('.resize-handle').forEach(handle => {
+    const startResize = (e) => {
+      e.stopPropagation();
+      let { x: startX, y: startY } = getClientCoords(e);
+      const orig = { ...seg };
 
-  crop.addEventListener('touchstart', (e) => {
-    if (e.target.classList.contains('resize-handle')) return;
-    let startX = e.touches[0].clientX, startY = e.touches[0].clientY;
-    document.addEventListener('touchmove', onMove);
-    document.addEventListener('touchend', onEnd);
-  });
-
-  // Resizing the crop box (Mouse & Touch support)
-  const resizeHandles = crop.querySelectorAll('.resize-handle');
-  resizeHandles.forEach(handle => {
-    handle.addEventListener('mousedown', (e) => {
-      const handleType = e.target.classList[1];
-      let startX = e.clientX, startY = e.clientY;
       const move = (e) => {
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const { x, y } = getClientCoords(e);
+        const dx = x - startX;
+        const dy = y - startY;
 
-        const dx = clientX - startX;
-        const dy = clientY - startY;
-
-        if (handleType === 'resize-tl') {
-          seg.cropWidth -= dx;
-          seg.cropHeight -= dy;
-          seg.cropLeft += dx;
-          seg.cropTop += dy;
-        } else if (handleType === 'resize-tr') {
-          seg.cropWidth += dx;
-          seg.cropHeight -= dy;
-          seg.cropTop += dy;
-        } else if (handleType === 'resize-bl') {
-          seg.cropWidth -= dx;
-          seg.cropHeight += dy;
-          seg.cropLeft += dx;
-        } else if (handleType === 'resize-br') {
-          seg.cropWidth += dx;
-          seg.cropHeight += dy;
+        if (handle.classList.contains('resize-br')) {
+          seg.cropWidth = orig.cropWidth + dx;
+          seg.cropHeight = orig.cropHeight + dy;
+        } else if (handle.classList.contains('resize-tr')) {
+          seg.cropTop = orig.cropTop + dy;
+          seg.cropWidth = orig.cropWidth + dx;
+        } else if (handle.classList.contains('resize-bl')) {
+          seg.cropLeft = orig.cropLeft + dx;
+          seg.cropWidth = orig.cropWidth - dx;
+          seg.cropHeight = orig.cropHeight + dy;
+        } else if (handle.classList.contains('resize-tl')) {
+          seg.cropLeft = orig.cropLeft + dx;
+          seg.cropTop = orig.cropTop + dy;
+          seg.cropWidth = orig.cropWidth - dx;
+          seg.cropHeight = orig.cropHeight - dy;
         }
 
+        crop.style.top = seg.cropTop + 'px';
+        crop.style.left = seg.cropLeft + 'px';
         crop.style.width = seg.cropWidth + 'px';
         crop.style.height = seg.cropHeight + 'px';
-        crop.style.left = seg.cropLeft + 'px';
-        crop.style.top = seg.cropTop + 'px';
-        startX = clientX;
-        startY = clientY;
       };
 
-      const end = () => {
+      const stop = () => {
         document.removeEventListener('mousemove', move);
-        document.removeEventListener('mouseup', end);
+        document.removeEventListener('mouseup', stop);
         document.removeEventListener('touchmove', move);
-        document.removeEventListener('touchend', end);
+        document.removeEventListener('touchend', stop);
       };
 
       document.addEventListener('mousemove', move);
-      document.addEventListener('mouseup', end);
+      document.addEventListener('mouseup', stop);
       document.addEventListener('touchmove', move);
-      document.addEventListener('touchend', end);
-    });
+      document.addEventListener('touchend', stop);
+    };
+
+    handle.addEventListener('mousedown', startResize);
+    handle.addEventListener('touchstart', startResize);
   });
 }
+
 </script>
 </body>
 </html>
