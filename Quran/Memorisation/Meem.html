@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MeeM</title>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #08fc00;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      background: #1976d2;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0d47a1;
+    }
+
+    #waveform {
+      margin: 20px 0;
+      height: 100px;
+      background: #e0e0e0;
+    }
+
+    .segment {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 5px;
+      background: #ccc;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #2196f3;
+      width: 0%;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .crop-area {
+      position: absolute;
+      border: 2px dashed #0126f8;
+      background-color: rgba(241, 196, 15, 0.3);
+      cursor: move;
+    }
+
+    .resize-handle {
+      width: 10px;
+      height: 10px;
+      background: #f1c40f;
+      position: absolute;
+    }
+
+    .resize-tl { top: -5px; left: -5px; cursor: nwse-resize; }
+    .resize-tr { top: -5px; right: -5px; cursor: nesw-resize; }
+    .resize-bl { bottom: -5px; left: -5px; cursor: nesw-resize; }
+    .resize-br { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+    canvas {
+      margin-top: 10px;
+      border: 1px solid #ffbb00;
+    }
+
+    .active-btn {
+      background: #fbc02d;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎧 MeeM</h2>
+
+<label>Upload Audio: <input type="file" id="audioUpload" accept="audio/*"></label><br><br>
+<label>Upload Image: <input type="file" id="imageUpload" accept="image/*"></label><br><br>
+
+<div id="waveform"></div>
+<button class="btn" id="setStart">Set Start</button>
+<button class="btn" id="setEnd">Set End</button>
+
+<p>Start Time: <span id="start-time">Not Set</span></p>
+<p>End Time: <span id="end-time">Not Set</span></p>
+
+<p id="segmentMessage" style="color: green; display: none;">Segment Created</p>
+
+<div id="segmentsContainer"></div>
+
+<script>
+const wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: '#90caf9',
+  progressColor: '#1976d2',
+  responsive: true
+});
+
+let imageURL = null;
+let segments = [];
+let tempStart = null;
+
+document.getElementById('audioUpload').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const objectURL = URL.createObjectURL(file);
+    wavesurfer.load(objectURL);
+  }
+});
+
+document.getElementById('imageUpload').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      imageURL = evt.target.result;
+      renderSegments();
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+const setStartBtn = document.getElementById('setStart');
+const setEndBtn = document.getElementById('setEnd');
+const startTimeDisplay = document.getElementById('start-time');
+const endTimeDisplay = document.getElementById('end-time');
+const segmentMessage = document.getElementById('segmentMessage');
+
+setStartBtn.addEventListener('click', () => {
+  tempStart = wavesurfer.getCurrentTime();
+  
+  // Update start time display
+  startTimeDisplay.innerText = tempStart.toFixed(2);  // Show time in seconds
+  
+  // Highlight button
+  setStartBtn.classList.add('active-btn');
+});
+
+setEndBtn.addEventListener('click', () => {
+  const end = wavesurfer.getCurrentTime();
+  
+  if (tempStart == null || end <= tempStart) {
+    alert('Set a valid start time.');
+    return;
+  }
+
+  // Update end time display
+  endTimeDisplay.innerText = end.toFixed(2);  // Show time in seconds
+
+  // Store segment and reset
+  segments.push({
+    start: tempStart,
+    end,
+    repeat: 1,
+    cropTop: 0,
+    cropLeft: 0,
+    cropWidth: 200,
+    cropHeight: 150,
+    loopCount: 0
+  });
+
+  // Reset start time and end time displays
+  startTimeDisplay.innerText = 'Not Set';
+  endTimeDisplay.innerText = 'Not Set';
+  
+  // Show Segment Created message and reset after 2 seconds
+  segmentMessage.style.display = 'block';
+  setTimeout(() => {
+    segmentMessage.style.display = 'none';
+  }, 2000);
+
+  // Reset button styles
+  setStartBtn.classList.remove('active-btn');
+  
+  tempStart = null;
+  renderSegments();
+});
+
+function renderSegments() {
+  const container = document.getElementById('segmentsContainer');
+  container.innerHTML = '';
+
+  segments.forEach((seg, i) => {
+    const segmentDiv = document.createElement('div');
+    segmentDiv.className = 'segment';
+
+    segmentDiv.innerHTML = `
+      <div class="image-container">
+        <img src="${imageURL}" id="segment-img-${i}" style="width: 100%;">
+        <div class="crop-area" id="crop-area-${i}" style="top:${seg.cropTop}px; left:${seg.cropLeft}px; width:${seg.cropWidth}px; height:${seg.cropHeight}px;">
+          <div class="resize-handle resize-tl"></div>
+          <div class="resize-handle resize-tr"></div>
+          <div class="resize-handle resize-bl"></div>
+          <div class="resize-handle resize-br"></div>
+        </div>
+        <button class="btn" onclick="cropImage(${i})">📸 Crop This Segment</button>
+      </div>
+
+      <div>
+        Start: <input type="number" value="${seg.start}" step="0.01" onchange="updateSegment(${i})" id="start-${i}">
+        End: <input type="number" value="${seg.end}" step="0.01" onchange="updateSegment(${i})" id="end-${i}">
+        Repeat: <input type="number" value="${seg.repeat}" min="1" onchange="updateSegment(${i})" id="repeat-${i}">
+        <button class="btn" onclick="playSegment(${i})">▶️ Play</button>
+        <button class="btn" onclick="pauseSegment()">⏸ Pause</button>
+        <button class="btn" onclick="deleteSegment(${i})">🗑 Delete</button>
+      </div>
+
+      <div class="progress-bar"><div id="progress-${i}" class="progress-fill"></div></div>
+      <canvas id="canvas-output-${i}" width="200" height="150"></canvas>
+    `;
+    container.appendChild(segmentDiv);
+
+    enableCropInteraction(i);
+  });
+}
+
+function updateSegment(i) {
+  const seg = segments[i];
+  seg.start = parseFloat(document.getElementById(`start-${i}`).value);
+  seg.end = parseFloat(document.getElementById(`end-${i}`).value);
+  seg.repeat = parseInt(document.getElementById(`repeat-${i}`).value);
+}
+
+function playSegment(index) {
+  const seg = segments[index];
+  seg.loopCount = 0;
+
+  wavesurfer.seekTo(seg.start / wavesurfer.getDuration());
+  wavesurfer.play(seg.start, seg.end);
+
+  wavesurfer.on('audioprocess', () => {
+    const current = wavesurfer.getCurrentTime();
+    const progressEl = document.getElementById(`progress-${index}`);
+    const percent = Math.min(((current - seg.start) / (seg.end - seg.start)) * 100, 100);
+    if (progressEl) progressEl.style.width = percent + '%';
+
+    if (current >= seg.end) {
+      seg.loopCount++;
+      if (seg.loopCount < seg.repeat) {
+        wavesurfer.play(seg.start, seg.end);
+      } else {
+        wavesurfer.pause();
+      }
+    }
+  });
+}
+
+function pauseSegment() {
+  wavesurfer.pause();
+}
+
+function deleteSegment(i) {
+  segments.splice(i, 1);
+  renderSegments();
+}
+
+function cropImage(i) {
+  const seg = segments[i];
+  const img = new Image();
+  img.src = imageURL;
+  img.onload = () => {
+    const canvas = document.getElementById(`canvas-output-${i}`);
+    canvas.width = seg.cropWidth;
+    canvas.height = seg.cropHeight;
+    const ctx = canvas.getContext('2d');
+
+    const scale = img.width / document.getElementById(`segment-img-${i}`).clientWidth;
+    ctx.drawImage(
+      img,
+      seg.cropLeft * scale,
+      seg.cropTop * scale,
+      seg.cropWidth * scale,
+      seg.cropHeight * scale,
+      0, 0,
+      seg.cropWidth,
+      seg.cropHeight
+    );
+  };
+}
+
+function enableCropInteraction(i) {
+  const crop = document.getElementById(`crop-area-${i}`);
+  const seg = segments[i];
+  
+  // Drag crop box
+  crop.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('resize-handle')) return;
+    let startX = e.clientX, startY = e.clientY;
+    const move = (e) => {
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      startX = e.clientX;
+      startY = e.clientY;
+      seg.cropLeft += dx;
+      seg.cropTop += dy;
+      crop.style.left = seg.cropLeft + 'px';
+      crop.style.top = seg.cropTop + 'px';
+    };
+    const up = () => {
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseup', up);
+    };
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', up);
+  });
+
+  // Resizing the crop box
+  const resizeHandles = crop.querySelectorAll('.resize-handle');
+  resizeHandles.forEach(handle => {
+    handle.addEventListener('mousedown', (e) => {
+      const handleType = e.target.classList[1];
+      let startX = e.clientX, startY = e.clientY;
+      const move = (e) => {
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+
+        if (handleType === 'resize-tl') {
+          seg.cropWidth -= dx;
+          seg.cropHeight -= dy;
+          seg.cropLeft += dx;
+          seg.cropTop += dy;
+        } else if (handleType === 'resize-tr') {
+          seg.cropWidth += dx;
+          seg.cropHeight -= dy;
+          seg.cropTop += dy;
+        } else if (handleType === 'resize-bl') {
+          seg.cropWidth -= dx;
+          seg.cropHeight += dy;
+          seg.cropLeft += dx;
+        } else if (handleType === 'resize-br') {
+          seg.cropWidth += dx;
+          seg.cropHeight += dy;
+        }
+
+        crop.style.width = seg.cropWidth + 'px';
+        crop.style.height = seg.cropHeight + 'px';
+        crop.style.left = seg.cropLeft + 'px';
+        crop.style.top = seg.cropTop + 'px';
+        
+        startX = e.clientX;
+        startY = e.clientY;
+      };
+      const up = () => {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('mouseup', up);
+      };
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', up);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
