@@ -294,7 +294,146 @@ If you are interested, you can learn more about h-card at https://microformats.o
       <small><p class="current-date" id="currentDate"></p></small>
   </div>
 
-  
+   <title>AI Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    #chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      width: 100%;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+    #messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .message {
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+    .user {
+      background: #d1e7ff;
+      align-self: flex-end;
+    }
+    .ai {
+      background: #eee;
+      align-self: flex-start;
+    }
+    #input-area {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+    #user-input {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+    #image-input {
+      flex: 0 0 auto;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="messages"></div>
+    <div id="input-area">
+      <input id="user-input" type="text" placeholder="Type your message..." />
+      <input type="file" id="image-input" accept="image/*" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "https://YOUR_VERCEL_API_URL/api/chat"; // 🔗 replace this
+
+    function addMessage(sender, text, cls) {
+      const messagesDiv = document.getElementById("messages");
+      const msg = document.createElement("div");
+      msg.className = `message ${cls}`;
+      msg.innerHTML = `<b>${sender}:</b> ${text}`;
+      messagesDiv.appendChild(msg);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById("user-input");
+      const fileInput = document.getElementById("image-input");
+      const text = input.value.trim();
+      let imageBase64 = null;
+
+      if (!text && !fileInput.files.length) return;
+
+      // Show user message
+      addMessage("You", text || "[📷 Image uploaded]", "user");
+      input.value = "";
+
+      // Convert image to base64 if selected
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        imageBase64 = await toBase64(file);
+        fileInput.value = ""; // reset
+      }
+
+      // Show "AI Typing..."
+      addMessage("AI", "Typing...", "ai");
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: [{ role: "user", content: text }],
+            imageBase64: imageBase64,
+          })
+        });
+
+        const data = await response.json();
+        document.querySelector("#messages .ai:last-child").innerHTML =
+          `<b>AI:</b> ${data.reply}`;
+      } catch (err) {
+        document.querySelector("#messages .ai:last-child").innerHTML =
+          `<b>AI:</b> ❌ Error talking to backend`;
+      }
+    }
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(",")[1]);
+        reader.onerror = error => reject(error);
+      });
+    }
+  </script>
   
 <html lang="en">
 <head>
