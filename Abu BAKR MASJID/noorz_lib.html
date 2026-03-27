@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link as="style" href="meeqat.css" rel="preload"/>
+<link as="font" crossorigin="" href="/assets/fonts/standard-book-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="script" href="/assets/js/seasonal.js" rel="preload"/>
+<title>Yamin's Aql</title>
+<!-- styles.css contains the CSS that styles most of this website. -->
+<link href="meeqat.css" rel="stylesheet"/>
+<link href="https://news.ycombinator.com/user?id=zerojames" rel="me"/>
+<link href="https://orcid.org/0009-0006-3736-1653" rel="me"/>
+<!-- This is used to optimise my website for mobile use.
+      See https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag for more information about what the tag means. -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<link href="alien" rel="icon"/>
+</head>
+<body><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+
+<main>
+<!-- Skip link so that screen reader users can skip narration of the navigation bar. -->
+<nav>
+
+
+
+</nav>
+<div id="main">
+
+<body>
+    
+      
+    
+    <section>
+    <div class="container">
+        <h4>نورز لائبریری مسجد ڈاڈسرا | Noorz Library Masjid </h4>
+       <!-- <a href="https://yamin0011.github.io/test/">Home</a> -->
+       <h1 style="text-align: center;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
+
+        
+     
+       
+
+    </div>
+    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+</head>
+<body>
+    
+
+    
+
+
+    <script>
+        // Get the current date and day using Day.js
+        const currentDate = dayjs();
+
+        // Format the date as 'YYYY-MM-DD' with day of the week
+        const formattedDate = currentDate.format('dddd, DD-MM-YYYY');
+
+        // Display the date in the div
+        document.getElementById('currentDate').textContent = " " + formattedDate;
+    </script>
+</body>
+</html>
+
+
+ <!-- <script>
+      
+      // Get the current date
+      const today = new Date();
+
+      // Get the full date components
+      const day = today.getDate();
+      const month = today.toLocaleString('default', { month: 'long' }); // Full month name
+      const year = today.getFullYear();
+
+      // Format the date string (e.g., March 13, 2025)
+      const formattedDate = `${month} ${day}, ${year}`;
+
+      // Set the content of the element to show the date
+      document.getElementById("currentDate").textContent = formattedDate;
+  </script>-->
+        <table>
+
+            
+            <h2 style="text-align: center;">
+                       إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًۭا مَّوْقُوتًۭا
+            </h2>
+            <h3 style="text-align: center;">
+                یقیناً نماز اہل ایمان پر فرض کی گئی ہے وقت کی پابندی کے ساتھ
+                    </h3>
+                
+            
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+    h2,h3{
+        font-size: large;
+        font-style: inherit;
+        color: rgb(0, 0, 0);
+        border-color: #2b2626;
+    }
+    h4{
+        color: #008000;
+    }
+
+    .table-container {
+        width: 95%;
+        max-width: 800px;
+        background: rgb(231, 53, 53);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        overflow: hidden;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    thead {
+        background: linear-gradient(135deg, #00c853, #64dd17);
+        color: rgb(3, 3, 3);
+    }
+
+    th {
+        padding: 14px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+
+    th small {
+        display: block;
+        font-size: 08px;
+        opacity: 0.9;
+    }
+
+    td {
+        padding: 14px;
+        font-size: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f8e9;
+        transition: 0.3s;
+    }
+
+    .salah {
+        color: #2e7d32;
+        font-weight: bold;
+        direction: rtl;
+    }
+
+    .time {
+        font-weight: 500;
+    }
+
+    .title {
+        text-align: center;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #2e7d32;
+        color: rgb(8, 8, 8);
+        letter-spacing: 1px;
+    }
+    div{
+        border-style: inset;
+        border-color: #000000;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="table-container">
+
+    
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>جَماعت <small>Jamat</small></th>
+                <th>اوقات الصلاة <small>Salah</small></th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="time">NULL</td>
+                <td class="salah">الفجر (Fajr) 🌙</td>
+                
+            </tr>
+
+            <tr>
+                <td class="time">01:15 PM</td>
+                <td class="salah">الظهر (Dhuhr) ☀️</td>
+               
+            </tr>
+
+            <tr>
+                <td class="time">5:15 PM</td>
+                <td class="salah">العصر (Asr) 🌤️</td>
+               
+            </tr>
+
+            <tr>
+                <td class="time">06:55 PM</td>
+                <td class="salah">المغرب (Maghrib) 🌇</td>
+                
+            </tr>
+
+            <tr>
+                <td class="time">NULL</td>
+                <td class="salah">العشاء (Isha) 🌙</td>
+                
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
+</body>
+</html>
