@@ -166,6 +166,21 @@ footer {
 
 <button id="topBtn" onclick="scrollToTop()">↑ Back To Top</button>
 
+<script>
+window.onscroll = function () {
+    let btn = document.getElementById("topBtn");
+    if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+</script>
 <footer>
     <p>© 2026 Yamin Manzoor | All Rights Reserved</p>
 </footer>
@@ -200,11 +215,7 @@ document.getElementById("imgModal").addEventListener("click", function(e) {
     }
 });
 </script>
-<script>
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
+
 
 </body>
 </html>
