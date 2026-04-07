@@ -111,7 +111,8 @@ footer {
             <h1>Yamin Manzoor</h1>
             <p> A Man With Multiple Interests</p>
         </div>
-        <img src="https://yamin0011.github.io/test\d.jpg" alt="Profile" class="profile-img">
+        
+        <img src="https://yamin0011.github.io/test\d.jpg" alt="Profile" class="profile-img" onclick="openImage(this.src)" style="cursor:pointer;">
     </div>
 </header>
 
@@ -168,13 +169,37 @@ footer {
 <footer>
     <p>© 2026 Yamin Manzoor | All Rights Reserved</p>
 </footer>
-
 <script>
-// Show button on scroll
-window.onscroll = function() {
-    document.getElementById("topBtn").style.display =
-        document.documentElement.scrollTop > 200 ? "block" : "none";
+function openImage(src) {
+    const modal = document.getElementById("imgModal");
+    const img = document.getElementById("modalImg");
+    img.src = src;
+    modal.style.display = "flex";
+}
+
+// Close on click
+document.getElementById("imgModal").onclick = function() {
+    this.style.display = "none";
 };
+</script>
+<div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;">
+    <img id="modalImg" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
+<script>
+function openImage(src) {
+    const modal = document.getElementById("imgModal");
+    const img = document.getElementById("modalImg");
+    img.src = src;
+    modal.style.display = "flex";
+}
+
+// Close ONLY when clicking outside image
+document.getElementById("imgModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        this.style.display = "none";
+    }
+});
+</script>
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
